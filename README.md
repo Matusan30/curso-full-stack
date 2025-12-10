@@ -53,7 +53,7 @@ Atajo para crear todo en VSCode:  !
     - Cabe aclarar que se debe editar cada elemento por separado
 
 - **Selectors**
-  - `class`: se aplican los atributos a la clase
-    - En HTML `<h1 class="rojo">Titulo<h1>´
-    - En CSS ´.rojo {color:red}´
-      - Es importante el ´.´
+  - `class=[nombre]`: se aplican los atributos a la clase
+    - En HTML `<h1 class="rojo">Titulo</h1>`
+    - En CSS `.rojo{color:red}`
+      - Es importante el `.` para poder acceder a la clase
