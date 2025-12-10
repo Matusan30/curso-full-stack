@@ -53,7 +53,16 @@ Atajo para crear todo en VSCode:  !
     - Cabe aclarar que se debe editar cada elemento por separado
 
 - **Selectors**
-  - `class=[nombre]`: se aplican los atributos a la clase
+  - `class="[nombre]"`: se aplican el CSS a la clase
     - En HTML `<h1 class="rojo">Titulo</h1>`
     - En CSS `.rojo{color:red}`
       - Es importante el `.` para poder acceder a la clase
+  - `id="[nombre]"`: se van a aplicar los atributos a ESE ÙNICO elemnto
+    - En HTML `<h1 id="title">Titulo</h1>`
+    - En CSS `#title {color:brown}`
+      - Lo que referencia al id es el `#`
+  - Según sus atributos
+    - `p[atributo]{color: red;}`
+      - Esto es: "A todos los párrafos que tengan el atributo `atributo`, aplicale el CSS"
+      - Es como un condicional
+  - `*`: es el all de toda la vida, aplica el CSS a todo
