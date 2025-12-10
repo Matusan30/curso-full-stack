@@ -51,3 +51,9 @@ Atajo para crear todo en VSCode:  !
     - Es útil para multipágina
     - Es un archivo "style.css" aparte, y se "linkea" (con el elemento `link`) a cada HTML (en el `head`)
     - Cabe aclarar que se debe editar cada elemento por separado
+
+- **Selectors**
+  - `class`: se aplican los atributos a la clase
+    - En HTML `<h1 class="rojo">Titulo<h1>´
+    - En CSS ´.rojo {color:red}´
+      - Es importante el ´.´
