@@ -72,48 +72,48 @@ Atajo para crear todo en VSCode:  !
 - **Colores**
   - Los colores con nombre están en [Documentación Colores](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/named-color)
   - [Página para ver Paletas de Colores](https://colorhunt.co/) (con Hexa o RGB)
-  - ´background-color´: permite cambiar el color del fondo de HTML
-  - ´color´: cambia el color del texto
+  - `background-color`: permite cambiar el color del fondo de HTML
+  - `color`: cambia el color del texto
 - **Fuente**
-  - ´font-weight´: Es el "peso", qué tan gorda es la letra
+  - `font-weight`: Es el "peso", qué tan gorda es la letra
     - bold (negrita), normal, lighter, etc.
     - Se puede poner en números [100-900]
-  - ´font-size´: El tamaño de la letra
+  - `font-size`: El tamaño de la letra
     - **Estátitcos**
       - En píxeles (px)
       - En puntos, es como en word (pt)
     - **Relativos**
-      - ´em´: La cantidad de veces el tamaño del padre (tamaño relativo al padre)
-        - Si el padre tiene 20px, y el hijo tiene ´1em´, tendrán el mismo tamaño
-        - Si el padre tiene 20px, y el hijo tiene ´2em´, el hijo tendrá el doble (40px), y así
-      - ´rem´: Relativo al ´root´ (suele ser el elemento ´HTML´), suele ser más consistente que ´em´
-  - ´font-family´: La fuente per sé
+      - `em`: La cantidad de veces el tamaño del padre (tamaño relativo al padre)
+        - Si el padre tiene 20px, y el hijo tiene `1em`, tendrán el mismo tamaño
+        - Si el padre tiene 20px, y el hijo tiene `2em`, el hijo tendrá el doble (40px), y así
+      - ´rem´: Relativo al ´root´ (suele ser el elemento `HTML`), suele ser más consistente que `em`
+  - `font-family`: La fuente per sé
       - Arial, Calibri, etc
       - Las que son varias palabras se ponen entre comillas dobles: "Times New Roman"
       - Se pone una fuente, y luego una genérica (es como el alt de las imágenes)
-      - ´font-family: Helvetica, sans-serif´
+      - `font-family: Helvetica, sans-serif`
       - [Página para ver Fuentes](https://fonts.google.com/)
         - Hay que copiar todos los links en el head, y luego hace la regla de CSS
-  - ´text-align´: A donde estará alineado el texto
+  - `text-align`: A donde estará alineado el texto
     - [Opciones de Alineado](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-align)
-  - ´text-transform´: cambia como pone las mayúsculas
-    - ´uppercase´: Todo el texto en mayúscula
-    - ´lowercase´: Todo el texto en minúscula
-    - ´capitalise´: La primera letra de cada palabra en mayúscula
+  - `text-transform`: cambia como pone las mayúsculas
+    - `uppercase`: Todo el texto en mayúscula
+    - `lowercase`: Todo el texto en minúscula
+    - `capitalise`: La primera letra de cada palabra en mayúscula
 
 - **Box Model**
-  - ´margin´: Está afuera (separa de las otras cosas)
-  - ´border [tamaño] [tipo] [color]´: Es el borde, en donde:
+  - `margin`: Está afuera (separa de las otras cosas)
+  - `border [tamaño] [tipo] [color]`: Es el borde, en donde:
     - Tamaño en px
     - Tipo (dotted, solid, dashed, etc) 
-  - ´padding´: es el "margen interno", deja un espacio alrededor del contenido
-  - A ESTOS SE LOS PUEDE CAMBIAR DE LOS CUATRO LADOS, Y VAN EN SENTIDO HORARIO EMPEZANDO DE ARRIBA
+  - `padding`: es el "margen interno", deja un espacio alrededor del contenido
+  - A ESTOS SE LOS PUEDE CAMBIAR DE LOS CUATRO LADOS, Y VAN EN SENTIDO HORARIO EMPEZANDO DE ARRIBA `padding: 10px 10px 10px 10px;`
 
 ## Sección 7: CSS Intermedio
 
 - **CASCADE**: 
   - Es como funciona el nivel de importancia de las reglas del CSS, de más importante a menos importante:
-    1. Importancia ´!important´: cuando se pone la palabra important, toma esa regla como la de mayor importancia
+    1. Importancia `!important`: cuando se pone la palabra important, toma esa regla como la de mayor importancia
     2. Tipo: Según la forma en la que se aplica el CSS (en orden de importancia, 1. Inline, 2. Internal, 3. External)
     3. Especificidad: Mientras más específico, más importancia (el id es más importante que la clase, que es más importante que el elemento, y así)
     4. Posición: Mientras más abajo en el código esté la regla, más importancia tiene
@@ -122,15 +122,15 @@ Atajo para crear todo en VSCode:  !
   - Se pueden combinar distintos Selectors para poder seleccionar un elemento del HTML en específico
     - Grupo
       - Los Selectors están separados por comas, se genera un "grupo" y aplica las reglas a todos los elementos del grupo
-      - ´h1, h2 {color: blue;}´: Pinta de Azul el h1 y el h2
+      - `h1, h2 {color: blue;}`: Pinta de Azul el h1 y el h2
     - Hijo
-      - Se separan mediante ´padre > hijo´, y aplica SOLO A HIJOS DIRECTOS
+      - Se separan mediante `padre > hijo`, y aplica SOLO A HIJOS DIRECTOS
     - Descendiente
-      - ´s_padre s_hijo { ... }´: Se separan con un espacio.
+      - `s_padre s_hijo { ... }`: Se separan con un espacio.
       - Hace referencia a un descendiente de cualquier nivel (No solo Hijo Directo)
     - En cadena
-      - ´selectorSelector { ... }´: Se encadenan los Selectors tal que se seleccionará al que cumpla con todas las condiciones
-      - ´p.item#importante { .. }´: Esto seleccionará un parrafo de la clase "item" que tenga el id "importante"
+      - `selectorSelector { ... }`: Se encadenan los Selectors tal que se seleccionará al que cumpla con todas las condiciones
+      - `p.item#importante { .. }`: Esto seleccionará un parrafo de la clase "item" que tenga el id "importante"
     - Combinar Combinadores
       - Se pueden hacer combinaciones entre los combinadores de arriba
   
@@ -148,3 +148,6 @@ Atajo para crear todo en VSCode:  !
     - Fija (Fixed)
       - Queda fija con una posición relativa a la esquina superior izquierda
       - No importa si scroleamos, se moverá para quedarse en ese lugar... sirve para un header
+  
+  ## Sección 8: CSS Avanzado
+
