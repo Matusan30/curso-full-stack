@@ -109,3 +109,42 @@ Atajo para crear todo en VSCode:  !
   - ´padding´: es el "margen interno", deja un espacio alrededor del contenido
   - A ESTOS SE LOS PUEDE CAMBIAR DE LOS CUATRO LADOS, Y VAN EN SENTIDO HORARIO EMPEZANDO DE ARRIBA
 
+## Sección 7: CSS Intermedio
+
+- **CASCADE**: 
+  - Es como funciona el nivel de importancia de las reglas del CSS, de más importante a menos importante:
+    1. Importancia ´!important´: cuando se pone la palabra important, toma esa regla como la de mayor importancia
+    2. Tipo: Según la forma en la que se aplica el CSS (en orden de importancia, 1. Inline, 2. Internal, 3. External)
+    3. Especificidad: Mientras más específico, más importancia (el id es más importante que la clase, que es más importante que el elemento, y así)
+    4. Posición: Mientras más abajo en el código esté la regla, más importancia tiene
+
+- **Combinar Selectors**
+  - Se pueden combinar distintos Selectors para poder seleccionar un elemento del HTML en específico
+    - Grupo
+      - Los Selectors están separados por comas, se genera un "grupo" y aplica las reglas a todos los elementos del grupo
+      - ´h1, h2 {color: blue;}´: Pinta de Azul el h1 y el h2
+    - Hijo
+      - Se separan mediante ´padre > hijo´, y aplica SOLO A HIJOS DIRECTOS
+    - Descendiente
+      - ´s_padre s_hijo { ... }´: Se separan con un espacio.
+      - Hace referencia a un descendiente de cualquier nivel (No solo Hijo Directo)
+    - En cadena
+      - ´selectorSelector { ... }´: Se encadenan los Selectors tal que se seleccionará al que cumpla con todas las condiciones
+      - ´p.item#importante { .. }´: Esto seleccionará un parrafo de la clase "item" que tenga el id "importante"
+    - Combinar Combinadores
+      - Se pueden hacer combinaciones entre los combinadores de arriba
+  
+  - **Posición**
+    - Estática
+      - Es la default de HTML
+      - HTML ordena las cosas una abajo de la otra
+    - Relativa
+      - Es la posición relativa a la default ("desde donde estabas por default movete x pixeles a la derecha)
+    - Absoluta
+      - Si tiene un ancestro (padre) con una posición relativa, el elemento se posicionará de forma relativa al padre
+      - Si no, se posicionará de forma relativa a la esquina superior izquierda de la pantalla
+      - Z-Index: Determina qué elementos están arriba de otros y viceversa (la pág es como un plano coordenado)
+        - Mientras más alto sea el Z-Index, más "arriba se muestra"
+    - Fija (Fixed)
+      - Queda fija con una posición relativa a la esquina superior izquierda
+      - No importa si scroleamos, se moverá para quedarse en ese lugar... sirve para un header
