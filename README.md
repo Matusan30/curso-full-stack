@@ -151,3 +151,47 @@ Atajo para crear todo en VSCode:  !
   
   ## Sección 8: CSS Avanzado
 
+  - Display
+    - Inline
+      - Se ponen en la misma línea que la anterior
+      - No se pueden cambiar ni el Width ni el Height, se ajustan al contenido
+      - `span`: 
+    - Block
+      - Es el Default
+      - Va un Block por línea
+    - Inline-Block
+      - Está entre el Inline y el Block
+      - Se pueden asignar el Width y el Height
+      - Los elementos van en una misma línea
+    - None
+      - Lo que va con None, desaparece de la página
+  - Float
+    - Se usa cuando queremos que un texto "abrace o rodee" una imagen
+    - El texto se acomoda alrededor de la imagen, como un diario
+    - En la IMAGEN: `float: right;` / `float: left;`, dependiendo de qué lado queremos que esté la imagen
+    - `clear`: Esta propiedad se le asigna a los elementos que queremos que NO cumplan con el float...
+      - Ej: Un footer, no queremos que esté alrededor de una imagen, sino abajo del todo ocupando todo el largo de la página
+      - Puede ser `clear: right, left, both`, dependiendo de qué queremos que esté libre
+  - Web Responsiveness
+    - Media Queries
+      - Sintaxis: `@media (max-width: XXXpx) { ... }`
+      - Lo que va entre paréntesis se llama "breakpoint", es la condición que debe cumplir
+        - `max-width`
+        - `min-width`
+        - Se puede combinar para hacer un intervalo: `(max-width: 100px) and (min-width: 50px)`
+        - También puede tener la sintaxis `(XXXpx <= width <= XXXpx)`, pero esto solo funciona en exploradores modernos
+      - Solo se fija en el CSS dentro de los {} cuando el ancho es menor a "XXXpx"
+    - CSS Grid
+      - Es bueno para hacer Layouts 2D (En una página)
+      - Se hace un div que contenga todos los otros divs
+      - Al div padre se le pone la regla `display: grid;`
+      - Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante: 
+        - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción), divide la página en 2
+        - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
+      - `gap: XXXpx`: esto especifica el espacio entre los elementos
+    - CSS Flexbox
+      - Es bueno para hacer Layouts 1D (sobre una misma línea)
+      - Funciona igual que el Grid (un div que contiene otros divs)
+      - Al div padre se le pone la regla `display: flex;`
+    - Frameworks (Bootstrap, etc)
+  
