@@ -149,9 +149,9 @@ Atajo para crear todo en VSCode:  !
       - Queda fija con una posición relativa a la esquina superior izquierda
       - No importa si scroleamos, se moverá para quedarse en ese lugar... sirve para un header
   
-  ## Sección 8: CSS Avanzado
+## Sección 8: CSS Avanzado
 
-  - Display
+  - **Display**
     - Inline
       - Se ponen en la misma línea que la anterior
       - No se pueden cambiar ni el Width ni el Height, se ajustan al contenido
@@ -165,15 +165,15 @@ Atajo para crear todo en VSCode:  !
       - Los elementos van en una misma línea
     - None
       - Lo que va con None, desaparece de la página
-  - Float
+  - **Float**
     - Se usa cuando queremos que un texto "abrace o rodee" una imagen
     - El texto se acomoda alrededor de la imagen, como un diario
     - En la IMAGEN: `float: right;` / `float: left;`, dependiendo de qué lado queremos que esté la imagen
     - `clear`: Esta propiedad se le asigna a los elementos que queremos que NO cumplan con el float...
       - Ej: Un footer, no queremos que esté alrededor de una imagen, sino abajo del todo ocupando todo el largo de la página
       - Puede ser `clear: right, left, both`, dependiendo de qué queremos que esté libre
-  - Web Responsiveness
-    - Media Queries
+  - **Web Responsiveness**
+    - **Media Queries**
       - Sintaxis: `@media (max-width: XXXpx) { ... }`
       - Lo que va entre paréntesis se llama "breakpoint", es la condición que debe cumplir
         - `max-width`
@@ -181,7 +181,7 @@ Atajo para crear todo en VSCode:  !
         - Se puede combinar para hacer un intervalo: `(max-width: 100px) and (min-width: 50px)`
         - También puede tener la sintaxis `(XXXpx <= width <= XXXpx)`, pero esto solo funciona en exploradores modernos
       - Solo se fija en el CSS dentro de los {} cuando el ancho es menor a "XXXpx"
-    - CSS Grid
+    - **CSS Grid**
       - Es bueno para hacer Layouts 2D (En una página)
       - Se hace un div que contenga todos los otros divs
       - Al div padre se le pone la regla `display: grid;`
@@ -189,9 +189,38 @@ Atajo para crear todo en VSCode:  !
         - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción), divide la página en 2
         - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
       - `gap: XXXpx`: esto especifica el espacio entre los elementos
-    - CSS Flexbox
-      - Es bueno para hacer Layouts 1D (sobre una misma línea)
-      - Funciona igual que el Grid (un div que contiene otros divs)
-      - Al div padre se le pone la regla `display: flex;`
-    - Frameworks (Bootstrap, etc)
+    - **CSS Flexbox**
+    - **Frameworks** (Bootstrap, etc)
+
+## Sección 9: FlexBox
+  - Es bueno para hacer Layouts 1D (sobre una misma línea)
+  - Funciona igual que el Grid (un div que contiene otros divs)
+  - [Guía de Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  - Al div padre se le pone la regla `display: flex;`
+  - **Opciones**
+    - `flex-direction: [ row // column ];`: Indica como se orientan los elementos, si horizontales o verticales
+    - `gap: XXpx`: La distancia entre elementos
+    - `flex-basis: XXXpx;`
+      - Es la longitud de las boxes
+      - Se pone la regla en los hijos del contenedor
+    - `order: X;`
+      - Especifica el orden de los elementos
+      - Mientras más grande el número que tenga asignado más al último va
+      - Va en cada elemento, el default es 0
+    - `flex-wrap: [ wrap // nowrap ];`
+      - Si cuando se pasa del largo de página, sigue abajo (wrap); sino queda fuera de la página (nowrap)
+      - Es una propiedad del contenedor
+    - `justify-content: [ flex-start // center // flex-end ];`
+      - Es como el alinear texto de Word, si arranca de la izquierda (start), de la derecha (end), o está centrado (center)
+    - `height: XXXpx;`: la altura del contenedor
+    - `align-items`: Hace los mismo que el justify-content, pero en vertical
+    - `align-self:`: Funciona como el align-items, pero solo en un elemento
+    - `align-content`: Si está `flex-wrap: wrap;`, se usa este en vez del `align-items`
+    - `flex-flow: [ flex-direction ] [ flex-wrap ]`: Permite cambiar ambos valores en una misma regla
+- [Juego de la Ranita para Aprender FlexBox](https://appbrewery.github.io/flexboxfroggy/)
+- **Espaciado**
+  - Prioridad de las reglas: min-width / max-width > flex-basis > width > content-width
+  - `flex-grow: [ 0 // 1 ];`: habilitar o no que se expanda, al expandir la página
+  - `flex-shrink: [ 0 // 1 ];`: habilitar o no que se comprima, al expandir la página
+  - Versión más compacta de escribir: `flex: [grow] [shrink] [basis];`
   
