@@ -182,13 +182,6 @@ Atajo para crear todo en VSCode:  !
         - También puede tener la sintaxis `(XXXpx <= width <= XXXpx)`, pero esto solo funciona en exploradores modernos
       - Solo se fija en el CSS dentro de los {} cuando el ancho es menor a "XXXpx"
     - **CSS Grid**
-      - Es bueno para hacer Layouts 2D (En una página)
-      - Se hace un div que contenga todos los otros divs
-      - Al div padre se le pone la regla `display: grid;`
-      - Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante: 
-        - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción), divide la página en 2
-        - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
-      - `gap: XXXpx`: esto especifica el espacio entre los elementos
     - **CSS Flexbox**
     - **Frameworks** (Bootstrap, etc)
 
@@ -223,4 +216,12 @@ Atajo para crear todo en VSCode:  !
   - `flex-grow: [ 0 // 1 ];`: habilitar o no que se expanda, al expandir la página
   - `flex-shrink: [ 0 // 1 ];`: habilitar o no que se comprima, al expandir la página
   - Versión más compacta de escribir: `flex: [grow] [shrink] [basis];`
-  
+
+## Sección 10: Grid
+- Es bueno para hacer Layouts 2D (En una página)
+- Se hace un div que contenga todos los otros divs
+- Al div padre se le pone la regla `display: grid;`
+- Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante: 
+  - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción), divide la página en 2
+  - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
+- `gap: XXXpx`: esto especifica el espacio entre los elementos
