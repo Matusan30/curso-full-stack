@@ -88,12 +88,12 @@ Atajo para crear todo en VSCode:  !
         - Si el padre tiene 20px, y el hijo tiene `2em`, el hijo tendrá el doble (40px), y así
       - ´rem´: Relativo al ´root´ (suele ser el elemento `HTML`), suele ser más consistente que `em`
   - `font-family`: La fuente per sé
-      - Arial, Calibri, etc
-      - Las que son varias palabras se ponen entre comillas dobles: "Times New Roman"
-      - Se pone una fuente, y luego una genérica (es como el alt de las imágenes)
-      - `font-family: Helvetica, sans-serif`
-      - [Página para ver Fuentes](https://fonts.google.com/)
-        - Hay que copiar todos los links en el head, y luego hace la regla de CSS
+    - Arial, Calibri, etc
+    - Las que son varias palabras se ponen entre comillas dobles: "Times New Roman"
+    - Se pone una fuente, y luego una genérica (es como el alt de las imágenes)
+    - `font-family: Helvetica, sans-serif`
+    - [Página para ver Fuentes](https://fonts.google.com/)
+      - Hay que copiar todos los links en el head, y luego hace la regla de CSS
   - `text-align`: A donde estará alineado el texto
     - [Opciones de Alineado](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-align)
   - `text-transform`: cambia como pone las mayúsculas
@@ -105,13 +105,13 @@ Atajo para crear todo en VSCode:  !
   - `margin`: Está afuera (separa de las otras cosas)
   - `border [tamaño] [tipo] [color]`: Es el borde, en donde:
     - Tamaño en px
-    - Tipo (dotted, solid, dashed, etc) 
+    - Tipo (dotted, solid, dashed, etc)
   - `padding`: es el "margen interno", deja un espacio alrededor del contenido
   - A ESTOS SE LOS PUEDE CAMBIAR DE LOS CUATRO LADOS, Y VAN EN SENTIDO HORARIO EMPEZANDO DE ARRIBA `padding: 10px 10px 10px 10px;`
 
 ## Sección 7: CSS Intermedio
 
-- **CASCADE**: 
+- **CASCADE**
   - Es como funciona el nivel de importancia de las reglas del CSS, de más importante a menos importante:
     1. Importancia `!important`: cuando se pone la palabra important, toma esa regla como la de mayor importancia
     2. Tipo: Según la forma en la que se aplica el CSS (en orden de importancia, 1. Inline, 2. Internal, 3. External)
@@ -151,77 +151,103 @@ Atajo para crear todo en VSCode:  !
   
 ## Sección 8: CSS Avanzado
 
-  - **Display**
-    - Inline
-      - Se ponen en la misma línea que la anterior
-      - No se pueden cambiar ni el Width ni el Height, se ajustan al contenido
-      - `span`: 
-    - Block
-      - Es el Default
-      - Va un Block por línea
-    - Inline-Block
-      - Está entre el Inline y el Block
-      - Se pueden asignar el Width y el Height
-      - Los elementos van en una misma línea
-    - None
-      - Lo que va con None, desaparece de la página
-  - **Float**
-    - Se usa cuando queremos que un texto "abrace o rodee" una imagen
-    - El texto se acomoda alrededor de la imagen, como un diario
-    - En la IMAGEN: `float: right;` / `float: left;`, dependiendo de qué lado queremos que esté la imagen
-    - `clear`: Esta propiedad se le asigna a los elementos que queremos que NO cumplan con el float...
-      - Ej: Un footer, no queremos que esté alrededor de una imagen, sino abajo del todo ocupando todo el largo de la página
-      - Puede ser `clear: right, left, both`, dependiendo de qué queremos que esté libre
-  - **Web Responsiveness**
-    - **Media Queries**
-      - Sintaxis: `@media (max-width: XXXpx) { ... }`
-      - Lo que va entre paréntesis se llama "breakpoint", es la condición que debe cumplir
-        - `max-width`
-        - `min-width`
-        - Se puede combinar para hacer un intervalo: `(max-width: 100px) and (min-width: 50px)`
-        - También puede tener la sintaxis `(XXXpx <= width <= XXXpx)`, pero esto solo funciona en exploradores modernos
-      - Solo se fija en el CSS dentro de los {} cuando el ancho es menor a "XXXpx"
-    - **CSS Grid**
-    - **CSS Flexbox**
-    - **Frameworks** (Bootstrap, etc)
+- **Display**
+  - Inline
+    - Se ponen en la misma línea que la anterior
+    - No se pueden cambiar ni el Width ni el Height, se ajustan al contenido
+    - `span`
+  - Block
+    - Es el Default
+    - Va un Block por línea
+  - Inline-Block
+    - Está entre el Inline y el Block
+    - Se pueden asignar el Width y el Height
+    - Los elementos van en una misma línea
+  - None
+    - Lo que va con None, desaparece de la página
+- **Float**
+  - Se usa cuando queremos que un texto "abrace o rodee" una imagen
+  - El texto se acomoda alrededor de la imagen, como un diario
+  - En la IMAGEN: `float: right;` / `float: left;`, dependiendo de qué lado queremos que esté la imagen
+  - `clear`: Esta propiedad se le asigna a los elementos que queremos que NO cumplan con el float...
+    - Ej: Un footer, no queremos que esté alrededor de una imagen, sino abajo del todo ocupando todo el largo de la página
+    - Puede ser `clear: right, left, both`, dependiendo de qué queremos que esté libre
+- **Web Responsiveness**
+  - **Media Queries**
+    - Sintaxis: `@media (max-width: XXXpx) { ... }`
+    - Lo que va entre paréntesis se llama "breakpoint", es la condición que debe cumplir
+      - `max-width`
+      - `min-width`
+      - Se puede combinar para hacer un intervalo: `(max-width: 100px) and (min-width: 50px)`
+      - También puede tener la sintaxis `(XXXpx <= width <= XXXpx)`, pero esto solo funciona en exploradores modernos
+    - Solo se fija en el CSS dentro de los {} cuando el ancho es menor a "XXXpx"
+  - **CSS Grid**
+  - **CSS Flexbox**
+  - **Frameworks** (Bootstrap, etc)
 
 ## Sección 9: FlexBox
-  - Es bueno para hacer Layouts 1D (sobre una misma línea)
-  - Funciona igual que el Grid (un div que contiene otros divs)
-  - [Guía de Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  - Al div padre se le pone la regla `display: flex;`
-  - **Opciones**
-    - `flex-direction: [ row // column ];`: Indica como se orientan los elementos, si horizontales o verticales
-    - `gap: XXpx`: La distancia entre elementos
-    - `flex-basis: XXXpx;`
-      - Es la longitud de las boxes
-      - Se pone la regla en los hijos del contenedor
-    - `order: X;`
-      - Especifica el orden de los elementos
-      - Mientras más grande el número que tenga asignado más al último va
-      - Va en cada elemento, el default es 0
-    - `flex-wrap: [ wrap // nowrap ];`
-      - Si cuando se pasa del largo de página, sigue abajo (wrap); sino queda fuera de la página (nowrap)
-      - Es una propiedad del contenedor
-    - `justify-content: [ flex-start // center // flex-end ];`
-      - Es como el alinear texto de Word, si arranca de la izquierda (start), de la derecha (end), o está centrado (center)
-    - `height: XXXpx;`: la altura del contenedor
-    - `align-items`: Hace los mismo que el justify-content, pero en vertical
-    - `align-self:`: Funciona como el align-items, pero solo en un elemento
-    - `align-content`: Si está `flex-wrap: wrap;`, se usa este en vez del `align-items`
-    - `flex-flow: [ flex-direction ] [ flex-wrap ]`: Permite cambiar ambos valores en una misma regla
+
+- Es bueno para hacer Layouts 1D (sobre una misma línea)
+- Funciona igual que el Grid (un div que contiene otros divs)
+- [Guía de Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- Al div padre se le pone la regla `display: flex;`
+- **Opciones**
+  - `flex-direction: [ row // column ];`: Indica como se orientan los elementos, si horizontales o verticales
+  - `gap: XXpx`: La distancia entre elementos
+  - `flex-basis: XXXpx;`
+    - Es la longitud de las boxes
+    - Se pone la regla en los hijos del contenedor
+  - `order: X;`
+    - Especifica el orden de los elementos
+    - Mientras más grande el número que tenga asignado más al último va
+    - Va en cada elemento, el default es 0
+  - `flex-wrap: [ wrap // nowrap ];`
+    - Si cuando se pasa del largo de página, sigue abajo (wrap); sino queda fuera de la página (nowrap)
+    - Es una propiedad del contenedor
+  - `justify-content: [ flex-start // center // flex-end ];`
+    - Es como el alinear texto de Word, si arranca de la izquierda (start), de la derecha (end), o está centrado (center)
+  - `height: XXXpx;`: la altura del contenedor
+  - `align-items`: Hace los mismo que el justify-content, pero en vertical
+  - `align-self:`: Funciona como el align-items, pero solo en un elemento
+  - `align-content`: Si está `flex-wrap: wrap;`, se usa este en vez del `align-items`
+  - `flex-flow: [ flex-direction ] [ flex-wrap ]`: Permite cambiar ambos valores en una misma regla
 - [Juego de la Ranita para Aprender FlexBox](https://appbrewery.github.io/flexboxfroggy/)
 - **Espaciado**
-  - Prioridad de las reglas: min-width / max-width > flex-basis > width > content-width
-  - `flex-grow: [ 0 // 1 ];`: habilitar o no que se expanda, al expandir la página
-  - `flex-shrink: [ 0 // 1 ];`: habilitar o no que se comprima, al expandir la página
-  - Versión más compacta de escribir: `flex: [grow] [shrink] [basis];`
+- Prioridad de las reglas: min-width / max-width > flex-basis > width > content-width
+- `flex-grow: [ 0 // 1 ];`: habilitar o no que se expanda, al expandir la página
+- `flex-shrink: [ 0 // 1 ];`: habilitar o no que se comprima, al expandir la página
+- Versión más compacta de escribir: `flex: [grow] [shrink] [basis];`
 
 ## Sección 10: Grid
+
 - Es bueno para hacer Layouts 2D (En una página)
+- Se comporta como una grilla, alinea todo en filas y columnas
 - Se hace un div que contenga todos los otros divs
-- Al div padre se le pone la regla `display: grid;`
-- Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante: 
-  - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción), divide la página en 2
-  - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
-- `gap: XXXpx`: esto especifica el espacio entre los elementos
+- Se puede imaginar como un ajedrez o una matriz, con las casillas, y con los índices
+Los elementos de un Grid son:
+- **Contenedor**
+  - Al div padre se le pone la regla `display: grid;`
+  - Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante
+    - `grid-template-columns: 1fr 1fr`: Esto quiere decir que el Grid va a tener 2 columnas de igual tamaño (1fr = 1 Fracción, el `fr` toma el largo entero de la página), divide la página en 2
+    - `grid-template-rows: 100px 200px 200px`: El Grid va a tener 3 filas de esas medidas en px
+  - `gap: XXXpx`: esto especifica el espacio entre los elementos
+  - Se puede usar `grid-template: [rows] / [columns]`, de forma resumida
+  - En vez de `grid-template 200px 200px 200px;`, podemos usar la función `repeat([cantidad de veces], [tamaño])` (en este caso sería `repeat(3, 200px)`)
+  - Cuando tenemos una cantidad de elementos mayor al tamaño del Grid, podemos asignarles un tamaño con `grid-auto-rows: XXXpx;`
+  - Se pueden inspeccionar con las Developer's Tools de Chrome
+  - `minmax([min], [max])` se puede usar para darle un rango de píxelesa a un elemento (que no se achique más que esto y no se agrande más que esto)
+- **Tracks**
+  - Son como las Pool Lines
+- **Cells**
+  - Es el elemento más pequeño de la Grid, es en donde se cortan dos Tracks, cada cuadradito
+- **Lines**
+  - Son las que separan los tracks, es literalmente el `gap`
+- **Items**
+  - Es el contenido, puede ocupar varias Cells
+  - `grid-column: span [numero]`: Empieza en donde debe, y ocupa X cells, se puede asignar de forma "absoluta" con:
+    - `grid-column-start`: es en qué cell empieza el item
+    - `grid-column-end`: es en qué cell termina el item
+  - Para las filas es lo mismo, con `grid-row`
+  - Se puede simplificar el código con `grid-area: [row-start] / [column-start] / [row-end] / [row-start];`
+  - Cúal va primero y cual segundo, depende del `order: [número]`, cuanto más grande sea, más al último va
+- [Juego del Jardín para practicar Grid](https://appbrewery.github.io/gridgarden/)
