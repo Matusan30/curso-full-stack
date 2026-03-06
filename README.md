@@ -251,3 +251,7 @@ Los elementos de un Grid son:
   - Se puede simplificar el código con `grid-area: [row-start] / [column-start] / [row-end] / [row-start];`
   - Cúal va primero y cual segundo, depende del `order: [número]`, cuanto más grande sea, más al último va
 - [Juego del Jardín para practicar Grid](https://appbrewery.github.io/gridgarden/)
+
+## Sección 11: Booststrap
+
+- Es un Framework de CSS
