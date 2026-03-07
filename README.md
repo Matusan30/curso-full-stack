@@ -254,4 +254,60 @@ Los elementos de un Grid son:
 
 ## Sección 11: Booststrap
 
-- Es un Framework de CSS
+- Es un Framework Open-Source de CSS
+  - Otros son: Foundation, TailWind, MUI
+  - ***PROS***
+    - Son útiles porque ya tienen las cosas hechas, esto nos permite ser más eficientes y desarrollar más rápido que si tuviesemos que programar todo desde cero
+    - Buena compatibilidad con los distintos navegadores
+  - ***CONTRAS***
+    - Como el CSS con Bootstrap se aplica mediante las clases en los elementos del HTML, es muy difícil poder separar el HTML y el CSS
+    - No es tan customizable como si lo programaras desde cero (pensar en Windows vs Linux)
+  - Usar sí: Querés armar una página rápido y que tenga una buena estética
+  - No usar sí: Estás armando una página sencilla y/o querés máximo control sobre el Front
+
+- **Como Usarlo**
+  - [Página Bootstrap](https://getbootstrap.com/)
+  - Incluirlo via CDN (Content Delivery Network)
+    - Si queremos solo el CSS, se copia el `link` en el `<head>`
+    - Si también queremos algo de JS (menús deplegables, etc), se copia el `script` al final del `</body>`
+  - Instalarlo via Gestor de Paquetes (npm, RubyGems, etc)
+    - Tener el Gestor de Paquetes instalado
+    - En la terminal pegar la instrucción que está en la página
+
+- **Sistema de 12 Columnas**
+  - Hay una clase padre `container`, que tiene una clase hijo `row`, y esta tiene las `col`
+  - La estructura sería: `container` -> `row` -> `col`
+  - Bootstrap le asignará automáticamente el espacio para que los items ocupen todo el largo de la row
+  - Cada `row` tiene espacios para 12 columnas, entonces si ponemos un número a cada columna (ej: `col-[1-12]`), esta ocupará la cantidad de espacios de ese número
+  - También se le pueden asignar tamaños para que sea Responsive
+
+  | Breakpoint | Class infix | Dimensions | Uso |
+  | :--- | :--- | :--- | :--- |
+  | Extra small | *None* | <576px | Nada |
+  | Small | `sm` | ≥576px | Mobile |
+  | Medium | `md` | ≥768px | Tablet |
+  | Large | `lg` | ≥992px | Laptop |
+  | Extra large | `xl` | ≥1200px | Desktop |
+  | Extra extra large | `xxl` | ≥1400px | TV |
+
+  - Entonces, para que un elemento ocupe la mitad de la pantalla en pc, se debe poner en su clase `col-xl-6`, pq 6 es la mitad de 12, y así
+  - [Página para Practicar el Sistema de 12 Columnas](https://appbrewery.github.io/bootstrap-layout/)
+
+- **Componentes**
+  - Botones
+    - Se le pone la etiqueta `btn` en donde va la clase
+    - Para modificarlo se le agregan las distintas etiquetas que se pueden ver en la documentación
+  - Cards
+    - Se copia y pega, y luego se modifica el código de la documentación
+  - Nav Bar
+    - Se pueden ver en la documentación o en la página de Examples
+  - Íconos (SVG)
+    - Se pueden copiar directo desde la [página de Bootstrap](https://icons.getbootstrap.com/) o descargar y pegar como imagen
+  - Carrusel
+  - Footer
+  - Todos se puede copiar y pegar desde [acá](https://getbootstrap.com/docs/5.3/examples/)
+- **Espaciado**
+  - Se puede ver la documentación de Bootstrap [acá](https://getbootstrap.com/docs/5.3/utilities/spacing/)
+- **Modo Oscuro**
+  Para poner modo oscuro solo basta con poner en la cabecera del HTML lo siguiente `<html data-bs-theme="dark">`
+- Se pueden ver algunas plantillas de Bootstrap [acá](https://www.w3schools.com/bootstrap/bootstrap_templates.asp)
