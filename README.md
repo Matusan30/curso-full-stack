@@ -338,7 +338,7 @@ Los elementos de un Grid son:
   - No seas un HDP, nada de clickbait ni esas cosas
 - Todo esto se puede practicar en [Canvas](https://www.canva.com)
 
-## Sección 14: Introducción a JavaScript (JS)
+## Sección 14 y 15: Introducción a JavaScript (JS) e Intermedio
 
 - Es un lenguaje interpretado
 - Es compatible con todos los navegadores
@@ -401,3 +401,60 @@ Los elementos de un Grid son:
   - for
     - Sintaxis: `for (inicio; corte; incremento) { ... }`
       - Ej: `for (i=0; i<2; i++) { ... }`
+
+## Sección 15: Document Object Model (DOM)
+
+- **Agregar JS a una página**
+  - Al igual que en CSS, se puede agregar JS
+    - Inline: `<body onload=" ... ;">`
+      - Evitar
+    - Internal: `<script type="text/javascript"> ... </script>`
+      - Va dentro del mismo HTML
+    - External: `<script scr="archivo.js" charset="utf-8"></script>`
+      - Se pone la ubicación del archivo.js en `scr`
+  - Es importante el orden en el que se ponen las cosas, porque HTML va línea por línea
+    - El CSS se pone en el `<head>` para que lo lea antes que todo el resto
+    - El script de JS se pone al último, justo antes del `</body>`, porque queremos que esté todo creado antes de ponernos a modificarlo
+- El DOM es lo que permite que la página pase de un HTML estático a algo interactivo, lo que hace es convertir los elementos del HTML, que al fin y al cabo sigue siendo texto plano, en objetos para que JS los pueda usar, es como el "traductor"
+- Puede ser representado gráficamente como un árbol, en donde el padre es un contenedor y los hijos son los elementos que están dentro.
+- Que esté representado como árbol es lo permite a JS viajar por la estructura
+- Cada objeto del DOM tiene propiedades (atributos) y métodos (comportamiento)
+- Obtener el valor de una propiedad: `[objeto].[propiedad];`
+- Asignar el valor de una propiedad: `[objeto].[propiedad] = [nuevoValor];`
+- Llamar métodos de un objeto: `[objeto].metodo();`
+- **Buscar un elemento**
+  - Se puede usar `document.querySelector()` para seleccionar los elementos, y se asignan a una variable
+    - `document.querySelector('#id')` para IDs
+    - `document.querySelector('.clase')` para clases
+    - `document.querySelector('div > p')` selectores complejos
+    - `querySelector` te devuelve el primero que encuentra y `querySelectorAll` te devuelve una lista con todos los que cumplen
+  - También se puede hacer recorriendo el árbol
+    - `children`: lista todos los hijos
+    - `firstElementChild`: va directo al primer hijo
+    - `lastElementChild`: va directo al último hijo
+    - `parentElement`: va al padre
+    - `nextElementSibling` y `previousElementSibling` para moverse dentro de la misma rama
+  - Otra forma es con los `getElementsby`
+    - `document.getElementsbyTagName([nombre])`: devuelve una lista con todos los elementos de ese tipo (li, p, etc)
+    - `document.getElementsByClassName('clase')`: devuelve una lista con todos los elementos de esa clase
+    - `document.getElementById('id')`: como el ID es único, devuelve un solo elemento
+- **Cambiar Propiedades del Style**
+  - Para cambiar el color se usa `[objeto].style.color = "color";`
+  - El resto están en la [documentación](https://www.w3schools.com/jsref/dom_obj_style.asp)
+- **Cambiar Propiedades del Texto**
+  - Para cambiar lo que el objeto lleva dentro `[objeto].innerHTML = "nuevo";`, esto modifica todo lo que esté adentro del objeto (por ejemplo, si tiene un `<strong>`)
+  - Para cambiar SOLO el texto, se usa `[objeto].textContent = "nuevo";`, esto toca únicamente al texto
+- **Cambiar Atributos**
+  - `[objeto].attributes;` muestra la lista de atributos del objeto
+  - Con `[objeto].getAttribute("nomAtributo");` se puede acceder al atributo
+  - Con `[objeto].setAttribute("nomAtributo", "cambio");` se cambia el valor del atributo
+- **Separación de Incumbencias**
+  - El HTML se encarga del contenido
+  - El CSS se encarga del estilo
+  - El JS se encarga de la funcionalidad
+  - No se deberían interferir entre ellos, es una mala práctica cambiar el CSS desde JS por ejemplo
+  - Lo que se hace es, se le aplican los atributos de CSS a una clase de antemano, y via JS, se le agrega o elimina la clase al objeto
+    - `objeto.classList;`: muestra una lista de las clases a las que pertenece el objeto
+    - `objeto.classList.add("clase");`: permite agregar una clase al objeto
+    - `objeto.classList.remove("clase");`: permite eliminar una clase al objeto
+    - `objeto.classList.toggle("clase");`: si el objeto no tiene la clase, la agrega, si la tiene, la elimina
