@@ -311,3 +311,93 @@ Los elementos de un Grid son:
 - **Modo Oscuro**
   Para poner modo oscuro solo basta con poner en la cabecera del HTML lo siguiente `<html data-bs-theme="dark">`
 - Se pueden ver algunas plantillas de Bootstrap [acá](https://www.w3schools.com/bootstrap/bootstrap_templates.asp)
+
+## Sección 12: Web Design
+
+- **Teoría del Color**
+  - [Página para ver paletas de colores](https://colorhunt.co/)
+- **Tipografía**
+- **UI Interface**
+  - Jerarquía
+    - Color (algo más brilloso o que sobresalga sobre otra cosa más apagada)
+    - Tamaño (las cosas más grandes llaman más la atención)
+  - Layout
+    - Cada línea de texto debería medir entre 40 y 60 caracteres y 6 a 10 palabras
+  - Alineado (todo debería estar alineado a la misma línea, mientras más líneas haya, peor)
+  - Espacio Vacío
+    - No debe estar todo junto apretado, sino que haya espacios vacíos
+    - Más minimalista
+  - Todo lo anterior DEPENDE DE LA AUDENCIA
+- **User Experience (UX)**
+  - Simplicidad
+    - Que sea simple a la vista y de usar, que no te abrume como usuario
+  - Consistencia
+    - Que toda la página sea consistente, por ej. que una NavBar al cambiar de página quede con el mismo orden
+  - Web Responsiveness
+    - Que al pasar de Desktop a Celu y viceversa que escale bien
+  - No seas un HDP, nada de clickbait ni esas cosas
+- Todo esto se puede practicar en [Canvas](https://www.canva.com)
+
+## Sección 14: Introducción a JavaScript (JS)
+
+- Es un lenguaje interpretado
+- Es compatible con todos los navegadores
+- Chrome tiene una consola de JS (F12 -> Console), pero la forma más cómoda de usarlo es en `Sources` -> `>>` -> `Snippets`
+- Sintaxis: funcion(mensaje);
+- [Guía de Buenas Prácticas](https://github.com/rwaldron/idiomatic.js)
+- Los comentarios se hacen con `//`
+- **Tipos de datos**
+  - string
+  - number
+  - array
+- **Tratamiento de Cadenas (strings)**
+  - `alert([str]);`: muestra una alerta de texto
+  - `typeof([algo]);`: devuelve qué tipo de dato es
+  - `prompt([String]);`: le pide un dato al usuario, es como un input de Python
+  - `var [nombre] = [valor];`: se usa para crear una variable
+  - Se usa el `+` para concatenar `str`
+  - `[str].length;`: cuenta el número de caracteres del `str`
+  - `[var].slice([principio (0)], [fin]);`: permite cortar un pedazo de texto
+  - `[var].toUpperCase();`: te lo convierte a mayúscula
+  - `[var].toLowerCase();`: minúscula
+- **Operaciones Aritméticas**
+  - Sintaxis: `var a = b [operador] c;`
+  - Operadores
+    - `+`: suma
+    - `-`: resta
+    - `*`: multiplicación
+    - `/`: división
+    - `%`: módulo (resto)
+    - `x = x + 1; | x++;`: incrementador
+    - `x = x - 1; | x--;`: decrementador
+    - `x = x + y; | x +=y;`: acumulador
+    - `Math.random();`: genera un número aleatorio entre 0 y 0.9999999999999999
+      - Después hay que multiplicarlo por el rango que queremos (n) (para un dado, 6)
+      - Y si queremos, redondearlo, se usa `Math.floor([var]);`
+      - Va de 0 a n-1, así que si queremos tener el intervalo 1-n, le tenemos que sumar 1
+- **Funciones**
+  - Sintaxis: `function [nombre](parámetros) { ... }`
+  - `return [valor];`
+- **Condicionales**
+  - Sintaxis `if (condición) { ... } else { ... }`
+  - Comparadores Lógicos
+    - `===`: igual (también checkea el tipo de dato) (1 =/= "1")
+    - `==`: igual (no checkea el tipo de dato) (1 = "1")
+    - `!==`: distinto
+    - `< / > / <= / >=`: menor / mayor / menor o igual / mayor o igual
+    - `&&`: y
+    - `||`: or
+    - `!`: negado
+- **Arrays**
+  - Sintaxis: `var nombreArray = [ 0, 1, 2, 3, ...];`
+  - `nombreArray.length;`: devuelve la cantidad de elementos del array
+  - `nombreArray.includes(elemento);`: devuelve true si el elemento está en el array
+  - `nombreArray.push(elemento);`: mete el elemento al último del array
+  - `nombreArray.pop();`: saca el último elemento del array
+- **Ciclos**
+  - while
+    - Sintaxis: `while (condición) { ... }`
+    - No seas culiado y te olvides la condición de corte nomás
+  - for
+    - Sintaxis: `for (inicio; corte; incremento) { ... }`
+      - Ej: `for (i=0; i<2; i++) { ... }`
