@@ -402,7 +402,7 @@ Los elementos de un Grid son:
     - Sintaxis: `for (inicio; corte; incremento) { ... }`
       - Ej: `for (i=0; i<2; i++) { ... }`
 
-## Sección 15: Document Object Model (DOM)
+## Sección 16: Document Object Model (DOM)
 
 - **Agregar JS a una página**
   - Al igual que en CSS, se puede agregar JS
@@ -458,3 +458,7 @@ Los elementos de un Grid son:
     - `objeto.classList.add("clase");`: permite agregar una clase al objeto
     - `objeto.classList.remove("clase");`: permite eliminar una clase al objeto
     - `objeto.classList.toggle("clase");`: si el objeto no tiene la clase, la agrega, si la tiene, la elimina
+
+## Sección 17: Juego de los Dados
+
+- **Hecho**
