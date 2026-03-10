@@ -502,3 +502,52 @@ Los elementos de un Grid son:
 - **Reproducir Audio**
   - Se debe crear un nuevo objeto de la clase Audio: `var nombre = new Audio([path]);`
   - Y luego ejecutar el método `[nombre].play();` para reproducirlo
+
+## Sección 19: JQuery (Framework de JS)
+
+- Es una librería de JS que simplifica el uso de las Querys
+- Como importar jQuery
+  - Via CDN
+    - Se copia y pega el siguiente script [JQuery](https://developers.google.com/speed/libraries#jquery)
+    - Y se pega ARRIBA del archivo JS
+  - Via Gestor de Paquetes (npm)
+- Sintaxis `$("elemento")` o `jQuery("elemento")`, esto reemplaza al `document.querySelector("elemento")`
+- **Cambiar Estilo**
+  - `$("elemento").css("propiedad", "nuevoValor");`: si se pone solo la propiedad, te devuelve el valor, si se le pasa propiedad y nuevoValor, lo cambia
+  - De todos modos, es una mala práctica tocar el CSS dentro del JS, lo que se hace es tener previamente una clase creada en el CSS, y se le agrega o saca esa clase via JS
+- **Manipular Clases**
+  - `$("elemento").addClass("clase1 clase2");`: para agregar una clase de un elemento
+  - `$("elemento").removeClass("clase1 clase2");`: para eliminar una clase de un elemento
+  - `$("elemento").hasClass("clase1");`: devuelve un bool si tiene o no una clase
+- **Manipular Texto**
+  - `$("elemento").text("nuevoTexto");`: le cambia el texto al elemento, es como el textContent
+  - `$("elemento").html("nuevoHTML");`: le cambia lo que está dentro del HTML al elemento, es como el innerHTML
+- **Manipular Atributos**
+  - `$("elemento").attr("atributo", "nuevoValor");`: si se pone solo el atributo, te devuelve el valor, si se le pasa atributo y nuevoValor, lo cambia
+- **eventListeners**
+  - `$("elemento").click(funcion());`: Detecta un click en el/los elementos, y ejecuta la función del callback
+  - `$("elemento").keypress(funcion());`: Detecta una tecla en el/los elementos, y ejecuta la función del callback
+  - `$("elemento").on("evento", funcion());`: Cuando detecta el [evento](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events) ejecuta la función
+- **Añadir o Eliminar elementos del HTML**
+  - Añadir
+    - `$("elemento").before("nuevoElemento");`: agregar un nuevoElemento antes (arriba) del que estaba
+    - `$("elemento").after("nuevoElemento");`: agregar un nuevoElemento después (abajo) del que estaba
+    - `$("elemento").prepend("nuevoElemento");`: agregar un nuevoElemento dentro del que estaba, antes del contenido que tenía
+    - `$("elemento").append("nuevoElemento");`: agregar un nuevoElemento dentro del que estaba, después del contenido que tenía
+  - Eliminar
+    - `$("elemento").remove();`: Elimina todos los elementos "elemento"
+  - Mostrar / Ocultar
+    - `$("elemento").hide();`: oculta el elemento
+    - `$("elemento").show();`: muestra el elemento
+    - `$("elemento").toggle();`: lo prende y apaga
+- **Añadir Animaciones**
+  - `$("elemento").fadeOut();`: lo va desapareciendo de a poquito
+  - `$("elemento").fadeIn();`: lo va apareciendo de a poquito
+  - `$("elemento").fadeToggle();`: lo va apareciendo y desapareciendo de a poquito  
+  - `$("elemento").slideUp();`: se desliza hacia arriba y lo oculta
+  - `$("elemento").slideDown();`: se desliza hacia abajo y aparece
+  - `$("elemento").slideToggle();`: lo va deslizando arriba y abajo
+  - `$("elemento").animate({reglasCSS});`: animaciones personalizadas, solo acepta reglas que tengan valores numéricos, no puede cambiar colores por ejemplo
+  - Todo lo anterior se puede encandenar `$("elemento").fadeOut().slideDown().animate();`
+  - Se pueden ver todos los efectos [acá](https://www.w3schools.com/jquery/jquery_ref_effects.asp)
+  
