@@ -109,6 +109,9 @@ Atajo para crear todo en VSCode:  !
   - `padding`: es el "margen interno", deja un espacio alrededor del contenido
   - A ESTOS SE LOS PUEDE CAMBIAR DE LOS CUATRO LADOS, Y VAN EN SENTIDO HORARIO EMPEZANDO DE ARRIBA `padding: 10px 10px 10px 10px;`
 
+- **Botones**
+  - Para cambiar de imagen de fondo `background-image: url([path]);`
+
 ## Sección 7: CSS Intermedio
 
 - **CASCADE**
@@ -462,3 +465,40 @@ Los elementos de un Grid son:
 ## Sección 17: Juego de los Dados
 
 - **Hecho**
+
+## Sección 18: JS Avanzado y Manipulación de DOM
+
+- **EventListener**
+  - `[objeto].addEventListener("type", listener);`: cuando escucha al objeto, llama al listener (que suele ser una función de JS)
+  - `button1.addEventListener("click", funcion1);`: cuando clickeen el botón, llama a la función1 (a la cual no se le ponen los paréntesis)
+  - [Documentación](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
+  - `this`: es un puntero al objeto que activó el eventListener
+  - `document.addEventListener("keydown", funcion2(event));`: cuando se presione una tecla, llama a la función2
+- **Función Anónima**
+  - Tiene esta forma<.> `function () { ... }` (no tiene nombre)
+  - Se usan cuando necesitas que se ejecutan de forma inmediata o temporal sin ensuciar el código con nombres de funciones que se ejecutarán una sola vez, ej: eventListener
+- **Funciones de Orden Superior**
+  - Son funciones que reciben como parámetros otras funciones
+- **Switch Statements**
+  - Es como un Case of, para evaluar muchas condiciones, en vez de una como el if
+  - Mucho más legible si tenemos más de 3 condiciones
+  - `switch (expression) { case valor1: ... break; default:}`
+    - La expression es en lo que se va a fijar (que va a comparar)
+    - Cada `case` es una de las posibles opciones, al último de cada case va un `break;`
+    - Entre el `case valorX:` y el `break;` van todas las instrucciones que querés que se ejecuten
+    - Al final va un `default:`, en el que va a caer si no entra en ningún case (es como el else final)
+- **Debugger de Chrome**
+  - Es una herramienta de Chrome que te deja debugear el código, se usa: `debugger; funcionDebugear(parametros);`, y te lo abre
+- **Objetos**
+  - Sintaxis: `var [Nombre] = { atr1: valor1, ... }`
+  - Para acceder a un atributo, `[nombre].atrX`
+  - Para crear muchos objetos de forma más cómoda, se puede utilizar una función constructora, que es como hacer una clase
+    - sintaxis `function [nombre] (atr1, atr2, ... ) { this.atr1 = valor1; this.atr2 = valor2; ... }`
+    - El nombre debe estar en Upper Camel Case (la primer letra en mayúscula)
+    - Y al crear los objetos: `var nom1 = new Nombre(val1, val2, ... );`
+  - Métodos
+    - `this.[nombre] = function() { ... }`: para crear el método
+    - `[objeto].[método]();`: para acceder al método
+- **Reproducir Audio**
+  - Se debe crear un nuevo objeto de la clase Audio: `var nombre = new Audio([path]);`
+  - Y luego ejecutar el método `[nombre].play();` para reproducirlo
