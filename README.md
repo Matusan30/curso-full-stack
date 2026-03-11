@@ -550,4 +550,6 @@ Los elementos de un Grid son:
   - `$("elemento").animate({reglasCSS});`: animaciones personalizadas, solo acepta reglas que tengan valores numéricos, no puede cambiar colores por ejemplo
   - Todo lo anterior se puede encandenar `$("elemento").fadeOut().slideDown().animate();`
   - Se pueden ver todos los efectos [acá](https://www.w3schools.com/jquery/jquery_ref_effects.asp)
-  
+
+## Sección 20: Simon
+  - Se puede jugar [acá](https://londonappbrewery.github.io/Simon-Game/)
