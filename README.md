@@ -552,4 +552,41 @@ Los elementos de un Grid son:
   - Se pueden ver todos los efectos [acá](https://www.w3schools.com/jquery/jquery_ref_effects.asp)
 
 ## Sección 20: Simon
-  - Se puede jugar [acá](https://londonappbrewery.github.io/Simon-Game/)
+
+- Se puede jugar [acá](https://londonappbrewery.github.io/Simon-Game/)
+
+## Sección 21: Comandos Unix
+
+- Ya los sé (a recursar SOP sino)
+
+## Sección 22: Backend
+
+- WebApp vs WebPage: No son lo mismo
+- El backend de una aplicación Web consiste de Server + App + DataBase
+
+## Sección 23: Node.js
+
+- Node.js es un framework de JS, un framework es un conjunto de librerías que cumplen un fin específico
+- **Como instalar**
+  - Descargar el instalador desde la [página de Node.js](https://nodejs.org/en)
+  - Correr el instalador .msi
+  - Reinicia la compu
+- **Como usar**
+  - Si escrbimos `node` en la terminal, se abre una interfaz de usuario (REPL)
+  - Con `.exit` salimos
+  - Para ejecutar un archivo con node, hay que escribir `node archivo.js` en la terminal
+- **Módulos Nativos de Node**
+  - Para usar un módulo hay que importarlo primero
+    - Vía CJS
+      - const nombreModulo = require("nombreModulo");
+    - Vía ESM
+      - Se debe agregar al `package.json` la configuración `"type": module,` para poder usar la sintaxis ESM
+      - Se usa `import funcion from "paquete;"`, también se puede usar `*` para importar todo del paquete
+      - Algunas funciones deben estar entre llaves `{funcion}` cuando se importan
+  - File System
+    - Permite acceder a los archivos locales del usuario
+    - Para crear un archivo `fs.writeFile("nombreArchivo", "texto", error);`
+  - Node Package Manager (npm)
+    - Es un gestor de paquetes de Node
+    - Para inicializarlo en un proyecto `npm init`, te hace unas preguntas y crea un json con los datos
+    - Para instalar un paquete `npm install paquete`, los paquetes se pueden encontrar [acá](https://www.npmjs.com/)
