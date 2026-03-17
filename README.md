@@ -2,6 +2,47 @@
 
 Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Udemy.
 
+## Índice
+
+- [x] [Sección 2: HTML Básico](#sección-2-html-básico)
+- [x] [Sección 3: HTML Intermedio](#sección-3-html-intermedio)
+- [x] [Sección 4: HTML Multipágina](#sección-4-html-multipágina)
+- [x] [Sección 5: Introducción a CSS](#sección-5-introducción-a-css)
+- [x] [Sección 6: Propiedades de CSS](#sección-6-propiedades-de-css)
+- [x] [Sección 7: CSS Intermedio](#sección-7-css-intermedio)
+- [x] [Sección 8: CSS Avanzado](#sección-8-css-avanzado)
+- [x] [Sección 9: FlexBox](#sección-9-flexbox)
+- [x] [Sección 10: Grid](#sección-10-grid)
+- [x] [Sección 11: Bootstrap](#sección-11-bootstrap)
+- [x] [Sección 12: Web Design](#sección-12-web-design)
+- [x] [Sección 14 y 15: Introducción a JavaScript (JS) e Intermedio](#sección-14-y-15-introducción-a-javascript-js-e-intermedio)
+- [x] [Sección 16: Document Object Model (DOM)](#sección-16-document-object-model-dom)
+- [x] [Sección 17: Juego de los Dados](#sección-17-juego-de-los-dados)
+- [x] [Sección 18: JS Avanzado y Manipulación de DOM](#sección-18-js-avanzado-y-manipulación-de-dom)
+- [x] [Sección 19: JQuery (Framework de JS)](#sección-19-jquery-framework-de-js)
+- [x] [Sección 20: Simon](#sección-20-simon)
+- [x] [Sección 21: Comandos Unix](#sección-21-comandos-unix)
+- [x] [Sección 22: Backend](#sección-22-backend)
+- [x] [Sección 23: Node.js](#sección-23-nodejs)
+- [x] [Sección 24: Express](#sección-24-express)
+- [ ] [Sección 25: EJS](#sección-25-ejs)
+- [ ] [Sección 26: Proyecto de Aplicación Web (Blog)](#sección-26-proyecto-de-aplicación-web-blog)
+- [ ] [Sección 27: Git, GitHub y Control de Versiones](#sección-27-git-github-y-control-de-versiones)
+- [ ] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
+- [ ] [Sección 29: Proyecto de APIs](#sección-29-proyecto-de-apis)
+- [ ] [Sección 30: Construir tu propia API](#sección-30-construir-tu-propia-api)
+- [ ] [Sección 31: Base de Datos](#sección-31-base-de-datos)
+- [ ] [Sección 32: SQL](#sección-32-sql)
+- [ ] [Sección 33: PostgreSQL](#sección-33-postgresql)
+- [ ] [Sección 34: Proyecto Nota de Libros](#sección-34-proyecto-nota-de-libros)
+- [ ] [Sección 35: Autenticación y Seguridad](#sección-35-autenticación-y-seguridad)
+- [ ] [Sección 36: React.js](#sección-36-reactjs)
+- [ ] [Sección 37: Web3 Descentralizado (DApp)](#sección-37-web3-descentralizado-dapp)
+- [ ] [Sección 38: Defi (Decentralised Finance) App](#sección-38-defi-decentralised-finance-app)
+- [ ] [Sección 39: IPC Live Blockchain](#sección-39-ipc-live-blockchain)
+- [ ] [Sección 40: DApps en ICP con Frontend de React](#sección-40-dapps-en-icp-con-frontend-de-react)
+- [ ] [Sección 41: NFTs y crear un mercado NFT](#sección-41-nfts-y-crear-un-mercado-nft)
+
 ## Sección 2: HTML Básico
 
 - **Heading** (`h1`, `h2`, etc)
@@ -255,7 +296,7 @@ Los elementos de un Grid son:
   - Cúal va primero y cual segundo, depende del `order: [número]`, cuanto más grande sea, más al último va
 - [Juego del Jardín para practicar Grid](https://appbrewery.github.io/gridgarden/)
 
-## Sección 11: Booststrap
+## Sección 11: Bootstrap
 
 - Es un Framework Open-Source de CSS
   - Otros son: Foundation, TailWind, MUI
@@ -665,3 +706,37 @@ Los elementos de un Grid son:
         next();
       });
       ```
+
+## Sección 25: EJS
+
+## Sección 26: Proyecto de Aplicación Web (Blog)
+
+## Sección 27: Git, GitHub y Control de Versiones
+
+## Sección 28: APIs (Application Programming Interface)
+
+## Sección 29: Proyecto de APIs
+
+## Sección 30: Construir tu propia API
+
+## Sección 31: Base de Datos
+
+## Sección 32: SQL
+
+## Sección 33: PostgreSQL
+
+## Sección 34: Proyecto Nota de Libros
+
+## Sección 35: Autenticación y Seguridad
+
+## Sección 36: React.js
+
+## Sección 37: Web3 Descentralizado (DApp)
+
+## Sección 38: Defi (Decentralised Finance) App
+
+## Sección 39: IPC Live Blockchain
+
+## Sección 40: DApps en ICP con Frontend de React
+
+## Sección 41: NFTs y crear un mercado NFT
