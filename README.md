@@ -566,7 +566,7 @@ Los elementos de un Grid son:
 
 ## Sección 23: Node.js
 
-- Node.js es un framework de JS, un framework es un conjunto de librerías que cumplen un fin específico
+- Node.js es un Runtime Environment de JS, nos permite correr JS en la dispositivo en vez del navegador
 - **Como instalar**
   - Descargar el instalador desde la [página de Node.js](https://nodejs.org/en)
   - Correr el instalador .msi
@@ -590,3 +590,78 @@ Los elementos de un Grid son:
     - Es un gestor de paquetes de Node
     - Para inicializarlo en un proyecto `npm init`, te hace unas preguntas y crea un json con los datos
     - Para instalar un paquete `npm install paquete`, los paquetes se pueden encontrar [acá](https://www.npmjs.com/)
+
+## Sección 24: Express
+
+- Express es un FrameWork de JS, un framework es un conjunto de librerías que cumplen un fin específico
+- **Como crear un Server con Express**
+  1. Crear un directorio
+  2. Crear un `index.js`
+  3. Inicializar `npm` (npm init)
+  4. Instalar el paquete de Express (`npm i express`)
+  5. Escribir la aplicación en el `index.js`
+    Se debe importar Express `import express from "express";`
+    Y crear la aplicación `const app = express();`
+  6. Arrancar el server con `node index.js` y
+
+  ```js
+  app.listen(port, () => {
+    console.log("Listening on port " + port);
+  });
+  ```
+
+- **Protocolo HTTP (HyperText Transfer Protocol)**
+  - Métodos
+    - GET -> Es cuando queres obtener datos del server (una página)
+      - Sintaxis: `app.get("[url]", (req, res) => { ... })`
+    - POST -> Es para mandar algo al server (datos de usuario), suele estar relacionado a un formulario
+      - Sintaxis: `app.post("[url]", (req, res) => { ... })`
+    - PUT -> Es para reemplazar un recurso con otro que estás mandando (actualizar), es como si se te pincha una goma, cambiar todo el auto
+      - Sintaxis: `app.put("[url]", (req, res) => { ... })`
+    - PATCH -> Es como parchar la goma, el server solo manda lo necesario para arreglarlo
+      - Sintaxis: `app.patch("[url]", (req, res) => { ... })`
+    - DELETE -> Borra
+      - Sintaxis: `app.delete("[url]", (req, res) => { ... })`
+  - Acá es cuando entran los ***endpoints***, que es un punto de acceso a una funcionalidad del sistema
+    - Están compuestos de una URL y un método HTTP (URL + HTTP = endpoint)
+    - Recibe una request, procesa los datos, y devuelve una response
+  - `res.sendFile("rutaArchivo");`: Con esto podes mandar un HTML por ejemplo
+  - `__dirname`: Se usa para obtener la ruta del archivo, se debe pegar este código
+
+    ```js
+    import { dirname } from "path";
+    import { fileURLToPath } from "url";
+    const __dirname = dirname(fileURLToPath(import.meta.url));
+    ```
+
+- **nodemon**
+  - Es una herramienta que restartea automáticamente el server cuando detecta algún cambio
+  - Solo hay que instalarla con npm y luego correr el index.js con `nodemon index.js`
+- **Postman**
+  - Es una herramienta para trabajar con APIs (un APIs es una interfaz que permite que distintos programas se comuniquen entre sí)
+  - Se puede descargar [acá](https://www.postman.com/)
+  - Sirve para probar los endpoints y hacer testing
+- **MiddleWare**
+  - El middleware es una función que se ejecuta automáticamente en todas las requests, antes y/o después del endpoint
+  - Request → middleware → endpoint → middleware → Response
+  - Es una capa intermedia del sistema que intercepta todas las requests para aplicar lógica global (verificar un login, lo hace el middleware así no se tiene que hacer cada vez que se accede a un endpoint)
+  - ***Tipos***
+    - Logging
+      - morgan
+        - Se debe instalar con npm, importar y usar con `app.use(morgan(tipo));`
+        - [Documentación](https://expressjs.com/en/resources/middleware/morgan.html)
+    - Pre-Processing
+      - ***body-parser*** -> es un middleware que convierte el body de la request en un objeto usable (ej: JSON → objeto JS)
+        - `app.use(express.json())`: si se quiere leer desde un JSON
+        - Pasa de `{ "user": "mati", "pass": "123" }` (que se tiene que procesar) a `req.body.user // "mati"` (sin tener que hacer nada)
+        - `app.use(express.urlencoded( {extended: true } ));`: esto se pone para poder leer los datos que vienen de un form de HTML
+    - Error
+    - Auth
+  - También se puede crear un middleware propio
+
+      ```js
+      app.use((req, res, next) => {
+        console.log("Request method: ", req.method);
+        next();
+      });
+      ```
