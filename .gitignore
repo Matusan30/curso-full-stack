@@ -1,0 +1,66 @@
+# =========================
+# 🔧 Node / Backend (Express)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variables sensibles
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Archivos de build
+dist/
+build/
+
+# =========================
+# ⚛️ Frontend (React)
+# =========================
+node_modules/
+build/
+.next/
+out/
+
+# Vite
+dist/
+.vite/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# =========================
+# 🐘 PostgreSQL / DB
+# =========================
+*.sql
+*.dump
+*.backup
+
+# (opcional) si generás dumps locales
+database_dump/
+
+# =========================
+# 🧠 Sistema / IDE
+# =========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# =========================
+# 🔐 Otros
+# =========================
+coverage/
+*.tgz
+
+# Archivos temporales
+tmp/
+temp/

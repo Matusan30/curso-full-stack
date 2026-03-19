@@ -25,7 +25,7 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 - [x] [Sección 22: Backend](#sección-22-backend)
 - [x] [Sección 23: Node.js](#sección-23-nodejs)
 - [x] [Sección 24: Express](#sección-24-express)
-- [ ] [Sección 25: EJS](#sección-25-ejs)
+- [ ] [Sección 25: EJS (Embedded JS)](#sección-25-ejs-embedded-js)
 - [ ] [Sección 26: Proyecto de Aplicación Web (Blog)](#sección-26-proyecto-de-aplicación-web-blog)
 - [ ] [Sección 27: Git, GitHub y Control de Versiones](#sección-27-git-github-y-control-de-versiones)
 - [ ] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
@@ -75,6 +75,9 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
   - `body`
 
 Atajo para crear todo en VSCode:  !
+
+- **Proyecto Portafolio v1**
+- [Link al repositorio](github.com/Matusan30/curriculum-vitae-curso-v1)
 
 ## Sección 5: Introducción a CSS
 
@@ -381,6 +384,10 @@ Los elementos de un Grid son:
     - Que al pasar de Desktop a Celu y viceversa que escale bien
   - No seas un HDP, nada de clickbait ni esas cosas
 - Todo esto se puede practicar en [Canvas](https://www.canva.com)
+
+## Sección 13: Portafolio V2
+
+- [Link al repositorio](https://github.com/Matusan30/curriculum-vitae-curso-v2)
 
 ## Sección 14 y 15: Introducción a JavaScript (JS) e Intermedio
 
@@ -707,7 +714,62 @@ Los elementos de un Grid son:
       });
       ```
 
-## Sección 25: EJS
+## Sección 25: EJS (Embedded JS)
+
+- Es como un HTML que tiene JS dentro
+- Se crea un archivo `.ejs`
+- Se envía con `res.render(archivo, {var1, var2, ...});` en vez de `res.sendPage()`
+
+- **Tags**
+  - `<%= var %>`: tiene un output en el HTML
+  - `<% códigoJS %>`: se ejecuta el código de JS, no tiene output (no muestra nada en el HTML)
+  - `<%- codigoHTML %>`: lo que va dentro se renderiza como HTML
+  - `<%% %%>`: se usa para salir del EJS, si se escribe así, no se interpreta como EJS
+  - `<%# Comentario %>`: se usa para hacer un comentario
+  - `<%- include(archivo.ejs) %>`: se usa para insertar un EJS dentro de otro EJS
+- Para hacer un if dentro del .ejs:
+
+```ejs
+<% if (usuario) { %>
+  <h1>Bienvenido, <%= usuario.nombre %></h1>
+<% } else { %>
+  <h1>Por favor, inicia sesión</h1>
+<% } %>
+```
+
+- **Pasar datos de JS a EJS**
+  - Se puede dar el caso en que querramos acceder a un dato en EJS que nunca mandamos o está corrupto, esto provocaría un error en la página
+  - Se puede evitar checkeando que esa variable exista previamente con un `if`
+  - `locals.variable`: es en donde se almacenan las variables
+
+```ejs
+<% if (locals.variable) { %>
+  <p><%= variable %></p>
+<% } %>
+```
+
+- **Pasar datos de EJS a JS**
+  - Se hace de forma muy parecida a como se haría normalmente (con un POST)
+
+```js
+app.post("/submit", (req, res) => {
+  const name = req.body["name"];
+  res.render("index.ejs");
+});
+```
+
+- **Partials vs Layout**
+  - Tenemos que poder diferenciar los archivos dinámicos de los estáticos
+  - ***Estáticos***
+    - son los que NO dependen del back
+    - CSS, imágenes, etc.
+    - Se deben poner todos en una misma carpeta `public`
+    - Se sirven con `app.use(express.static("public"));`
+  - ***Dinámicos***
+    - Son las cosas que dependen del back
+    - Hay código que se puede reutilizar (footers, nav-bar,headers, etc.)
+    - Para hacer esto se utilizan los Partials con el tag `<%- include (pag) %>`, entonces, incluyendo esto, nos ahorramos de poner el footer y nav-bar en cada página
+  - Esto se debe hacer porque Express trata de forma distinta los paths de los archivos dinámicos y estáticos
 
 ## Sección 26: Proyecto de Aplicación Web (Blog)
 
