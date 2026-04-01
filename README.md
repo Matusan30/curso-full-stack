@@ -773,9 +773,152 @@ app.post("/submit", (req, res) => {
 
 ## Sección 26: Proyecto de Aplicación Web (Blog)
 
+- Queda pendiente
+
 ## Sección 27: Git, GitHub y Control de Versiones
 
+- [Página para Practicar](https://learngitbranching.js.org/)
+
 ## Sección 28: APIs (Application Programming Interface)
+
+- Es una interfaz que permite la comunicación entre dos programas
+- **Arquitecturas de APIs (GraphQL, SOAP, RestAPI, gRPC, WebSockets)**
+  - API Rest (REpresentational State Transfer)
+    - Usa el protocolo HTTP
+    - Sin Estado (cada request es independiente)
+    - Cliente-Servidor -> Separados
+    - URLs  claras para recursos
+  - GraphQL
+    - En vez de muchos endpoints, tiene uno solo
+    - Bueno para Front
+    - Más complejo de implementar
+- **Formato de Requests**
+  - API Endpoints
+    - `URLBase/Endpoint`
+    - Es a donde tenemos que hacer la solicitud
+  - Query (Es para filtrar y buscar)
+    - `URLBase/Endpoint?query1=value1&query2=value2`
+    - Se le agrega un signo de pregunta `?` y un nombre y valor de la query, para más de un filtro, se le pone el ampersand `&`
+  - Path Parameters (Es para identificar un recurso basado en un parámetro)
+    - `URLBase/Endpoint/[path-parameter]`
+- **JSON (JavaScript Object Notation)**
+  - Es un formato de archivo que tiene estructura de `"atributo"=valor`
+  - Es entendible para el humano y eficaz para la compu
+  - Para poder mandar datos en formato JSON, se deben "serializar"
+  - Para pasar un objeto JS a JSON (es como "empaquetarlo"): `const jsonData = JSON.stringify(data);`
+  - De JSON -> JS (desempaquetarlo): `const data = JSON.parse(jsonData);`
+- Para hacer un pedido a una API desde JS se usa **Axios**
+  - [Documentación](https://axios-http.com/docs/intro)
+
+Código para hacer una API request usando Axios:
+Es importante el async y el await, esto es porque estamos trabajando con funciones asíncronas
+
+```js
+app.get("/", async (req, res) => {
+  try {
+    const response = await axios.get("https://bored-api.appbrewery.com/random");
+    const result = response.data;
+    res.render("index.ejs", { data: result });
+  } catch (error) {
+    console.error("Failed to make request:", error.message);
+    res.render("index.ejs", {
+      error: error.message,
+    });
+  }
+});
+```
+
+- **Autenticación**
+  - Niveles
+    0. Sin Autenticación
+      Para seguridad se puede poner un límite de consultas por tiempo
+    1. Autenticación Básica
+      Se pasa junto con la consulta un usuario y contraseña
+      Para esto se suele usar Encriptación en Base64
+      Se escribe así `usuario:contraseña`, esto se pasa a Base64, y luego se pone en el Header de Autorización de la consulta
+      Es para identificar personas
+    2. Autorización de API Key
+      Tenes un código único que genera el cliente
+      No identifica a un usuario, se suele usar para aplicaciones
+    3. Autentiación basada en Tokens
+      Se ingresa la primera vez con usuario y contraseña, y el cliente genera un token para que cada vez que quieras ingresar no haga falta poner usuario y contraseña (mala práctica, más chance de que te intercepten los datos y aparte pesa más la request)
+
+- **REST APIs**
+  - Se maneja con el protocolo HTTP (GET, POST, PUT. PATCH, DELETE)
+  - Para que una API sea verdaderamente "RESTFUL" tiene que poder gestionar todas las consultas
+  - Diferencia entre `async + await` y `.then()`
+    - Son dos formas de hacer lo mismo
+    - Se puede hacer `funcion1().then()` en la cual se ejecuta la `función1` e al finalizar se ejecuta el then
+
+```js
+axios.get('/user', {
+    params: {
+      ID: 12345
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+- Sino, la forma más *moderna*, es declarar una función como asíncrona (con el `async` antes), y dentro de ella a alguna instrucción poner el `await`, esto hará que se ejecute la función con el `await`, y luego, ejecuta el resto del código
+
+```js
+async function getUser() {
+  try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+
+- **Manejando un POST con Axios**
+  - Se le agrega al `GET` un nuevo atributo `body`
+
+```js
+import axios from "axios";
+app.post("/", async(req, res) => {
+  try {
+    await axios.post("URL", body, config);
+    res.sendStatus(201);
+  } catch (error) {
+    res.status(404).send(error.response.data);
+  }
+});
+```
+
+- **Manejando un PUT/PATCH con Axios (para actualizar)**
+
+```js
+import axios from "axios";
+app.post("/", async(req, res) => {
+  try {
+    await axios.post("URL/[id]", body, config);
+    res.sendStatus(201);
+  } catch (error) {
+    res.status(404).send(error.response.data);
+  }
+});
+```
+
+- **Manejando un DELETE con Axios**
+
+```js
+import axios from "axios";
+app.post("/", async(req, res) => {
+  try {
+    await axios.delete("URL/[id]", config);
+    res.sendStatus(201);
+  } catch (error) {
+    res.status(404).send(error.response.data);
+  }
+});
+```
 
 ## Sección 29: Proyecto de APIs
 
