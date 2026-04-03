@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase LOTR</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Random LOTR Phrase Generator</h1>
+        
+        <% if (locals.phrase) { %>
+            <div class="phrase-box">
+                <p class="phrase-text"> <%= phrase %></p>
+                <p class="character"><%= character %></p>
+            </div>
+        <% } %>
+
+        <form action="/submit" method="post">
+            <button class="btn-primary" type="submit">Get Phrase</button>
+        </form>
+    </div>
+</body>
+</html>
