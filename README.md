@@ -922,6 +922,8 @@ app.post("/", async(req, res) => {
 
 ## Sección 29: Proyecto de APIs
 
+- Hecho, está en la carpeta `sección29-Use-Public-API`
+
 ## Sección 30: Construir tu propia API
 
 ## Sección 31: Base de Datos
