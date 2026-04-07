@@ -29,8 +29,8 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 - [ ] [Sección 26: Proyecto de Aplicación Web (Blog)](#sección-26-proyecto-de-aplicación-web-blog)
 - [x] [Sección 27: Git, GitHub y Control de Versiones](#sección-27-git-github-y-control-de-versiones)
 - [x] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
-- [x] [Sección 29: Proyecto de APIs](#sección-29-proyecto-de-apis)
-- [x] [Sección 30: Construir tu propia API](#sección-30-construir-tu-propia-api)
+- [x] [Sección 29: Proyecto de usar una API Pública](#sección-29-proyecto-de-usar-una-api-pública)
+- [x] [Sección 30: Construir tu propia API (REST)](#sección-30-construir-tu-propia-api-rest)
 - [ ] [Sección 31: Base de Datos](#sección-31-base-de-datos)
 - [ ] [Sección 32: SQL](#sección-32-sql)
 - [ ] [Sección 33: PostgreSQL](#sección-33-postgresql)
@@ -77,6 +77,8 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 Atajo para crear todo en VSCode:  !
 
 - **Proyecto Portafolio v1**
+:white_check_mark: Terminado!
+
 - [Link al repositorio](github.com/Matusan30/curriculum-vitae-curso-v1)
 
 ## Sección 5: Introducción a CSS
@@ -110,6 +112,8 @@ Atajo para crear todo en VSCode:  !
       - Esto es: "A todos los párrafos que tengan el atributo `atributo`, aplicale el CSS"
       - Es como un condicional
   - `*`: es el all de toda la vida, aplica el CSS a todo
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 6: Propiedades de CSS
 
@@ -156,6 +160,8 @@ Atajo para crear todo en VSCode:  !
 - **Botones**
   - Para cambiar de imagen de fondo `background-image: url([path]);`
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 7: CSS Intermedio
 
 - **CASCADE**
@@ -195,7 +201,9 @@ Atajo para crear todo en VSCode:  !
     - Fija (Fixed)
       - Queda fija con una posición relativa a la esquina superior izquierda
       - No importa si scroleamos, se moverá para quedarse en ese lugar... sirve para un header
-  
+
+[🔝 Volver al índice](#índice)
+
 ## Sección 8: CSS Avanzado
 
 - **Display**
@@ -232,6 +240,8 @@ Atajo para crear todo en VSCode:  !
   - **CSS Flexbox**
   - **Frameworks** (Bootstrap, etc)
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 9: FlexBox
 
 - Es bueno para hacer Layouts 1D (sobre una misma línea)
@@ -264,6 +274,8 @@ Atajo para crear todo en VSCode:  !
 - `flex-grow: [ 0 // 1 ];`: habilitar o no que se expanda, al expandir la página
 - `flex-shrink: [ 0 // 1 ];`: habilitar o no que se comprima, al expandir la página
 - Versión más compacta de escribir: `flex: [grow] [shrink] [basis];`
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 10: Grid
 
@@ -298,6 +310,8 @@ Los elementos de un Grid son:
   - Se puede simplificar el código con `grid-area: [row-start] / [column-start] / [row-end] / [row-start];`
   - Cúal va primero y cual segundo, depende del `order: [número]`, cuanto más grande sea, más al último va
 - [Juego del Jardín para practicar Grid](https://appbrewery.github.io/gridgarden/)
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 11: Bootstrap
 
@@ -359,6 +373,8 @@ Los elementos de un Grid son:
   Para poner modo oscuro solo basta con poner en la cabecera del HTML lo siguiente `<html data-bs-theme="dark">`
 - Se pueden ver algunas plantillas de Bootstrap [acá](https://www.w3schools.com/bootstrap/bootstrap_templates.asp)
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 12: Web Design
 
 - **Teoría del Color**
@@ -385,9 +401,13 @@ Los elementos de un Grid son:
   - No seas un HDP, nada de clickbait ni esas cosas
 - Todo esto se puede practicar en [Canvas](https://www.canva.com)
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 13: Portafolio V2
 
-- [Link al repositorio](https://github.com/Matusan30/curriculum-vitae-curso-v2)
+:white_check_mark: Terminado!
+
+[Link al repositorio](https://github.com/Matusan30/curriculum-vitae-curso-v2)
 
 ## Sección 14 y 15: Introducción a JavaScript (JS) e Intermedio
 
@@ -445,13 +465,43 @@ Los elementos de un Grid son:
   - `nombreArray.includes(elemento);`: devuelve true si el elemento está en el array
   - `nombreArray.push(elemento);`: mete el elemento al último del array
   - `nombreArray.pop();`: saca el último elemento del array
+  - Para ver un elemento del array, se puede:
+    - `array[indice]`: clásico, no permite índices negativos
+    - `array.at(indice)`: más moderno, permite índices negativos
+    - Para acceder al último elemento (el segundo es mejor): `array[array.length - 1] // array.at(-1)`
+
+  - Función `find`
+    - Devuelve el primer elemento de un array que cumpla con la condifición
+
+```js
+const objetoEncontrado = [array].find( (objeto) => condición);
+```
+
+- Función `filter`
+  - Devuelve un array con todos los elementos que cumplan con la condición
+
+```js
+const listaFiltrada = [array].filter( (objeto) => condición);
+```
+
 - **Ciclos**
-  - while
+  - ***while***
     - Sintaxis: `while (condición) { ... }`
     - No seas culiado y te olvides la condición de corte nomás
-  - for
+  - ***for***
     - Sintaxis: `for (inicio; corte; incremento) { ... }`
       - Ej: `for (i=0; i<2; i++) { ... }`
+  - ***for-each***
+  - Se usa para recorrer el array elemento por elemento, sin usar el for a peluche
+
+```js
+[array].forEach(element => {
+    // Lo que le hago al elemento
+    console.log(element);
+  });
+```
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 16: Document Object Model (DOM)
 
@@ -510,9 +560,13 @@ Los elementos de un Grid son:
     - `objeto.classList.remove("clase");`: permite eliminar una clase al objeto
     - `objeto.classList.toggle("clase");`: si el objeto no tiene la clase, la agrega, si la tiene, la elimina
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 17: Juego de los Dados
 
-- **Hecho**
+:white_check_mark: Terminado!
+
+Está en la carpeta `sección17-Dice-Roll`
 
 ## Sección 18: JS Avanzado y Manipulación de DOM
 
@@ -523,7 +577,7 @@ Los elementos de un Grid son:
   - `this`: es un puntero al objeto que activó el eventListener
   - `document.addEventListener("keydown", funcion2(event));`: cuando se presione una tecla, llama a la función2
 - **Función Anónima**
-  - Tiene esta forma<.> `function () { ... }` (no tiene nombre)
+  - Tiene esta forma `function () { ... }` (no tiene nombre)
   - Se usan cuando necesitas que se ejecutan de forma inmediata o temporal sin ensuciar el código con nombres de funciones que se ejecutarán una sola vez, ej: eventListener
 - **Funciones de Orden Superior**
   - Son funciones que reciben como parámetros otras funciones
@@ -535,6 +589,7 @@ Los elementos de un Grid son:
     - Cada `case` es una de las posibles opciones, al último de cada case va un `break;`
     - Entre el `case valorX:` y el `break;` van todas las instrucciones que querés que se ejecuten
     - Al final va un `default:`, en el que va a caer si no entra en ningún case (es como el else final)
+
 - **Debugger de Chrome**
   - Es una herramienta de Chrome que te deja debugear el código, se usa: `debugger; funcionDebugear(parametros);`, y te lo abre
 - **Objetos**
@@ -550,6 +605,8 @@ Los elementos de un Grid son:
 - **Reproducir Audio**
   - Se debe crear un nuevo objeto de la clase Audio: `var nombre = new Audio([path]);`
   - Y luego ejecutar el método `[nombre].play();` para reproducirlo
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 19: JQuery (Framework de JS)
 
@@ -599,9 +656,13 @@ Los elementos de un Grid son:
   - Todo lo anterior se puede encandenar `$("elemento").fadeOut().slideDown().animate();`
   - Se pueden ver todos los efectos [acá](https://www.w3schools.com/jquery/jquery_ref_effects.asp)
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 20: Simon
 
-- Se puede jugar [acá](https://londonappbrewery.github.io/Simon-Game/)
+:white_check_mark: Terminado!
+
+Está en la carpeta `sección20-Simon-Game`
 
 ## Sección 21: Comandos Unix
 
@@ -638,6 +699,8 @@ Los elementos de un Grid son:
     - Es un gestor de paquetes de Node
     - Para inicializarlo en un proyecto `npm init`, te hace unas preguntas y crea un json con los datos
     - Para instalar un paquete `npm install paquete`, los paquetes se pueden encontrar [acá](https://www.npmjs.com/)
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 24: Express
 
@@ -714,6 +777,8 @@ Los elementos de un Grid son:
       });
       ```
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 25: EJS (Embedded JS)
 
 - Es como un HTML que tiene JS dentro
@@ -770,6 +835,8 @@ app.post("/submit", (req, res) => {
     - Hay código que se puede reutilizar (footers, nav-bar,headers, etc.)
     - Para hacer esto se utilizan los Partials con el tag `<%- include (pag) %>`, entonces, incluyendo esto, nos ahorramos de poner el footer y nav-bar en cada página
   - Esto se debe hacer porque Express trata de forma distinta los paths de los archivos dinámicos y estáticos
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 26: Proyecto de Aplicación Web (Blog)
 
@@ -920,6 +987,8 @@ app.post("/", async(req, res) => {
 });
 ```
 
+[🔝 Volver al índice](#índice)
+
 ## Sección 29: Proyecto de usar una API Pública
 
 :white_check_mark: Terminado!
@@ -939,7 +1008,114 @@ Está en la carpeta `sección29-Use-Public-API`
   - Funcionan con una arquitectura Cliente-Servidor
   - No tiene estados (es **stateless**), esto implica que cada request y cada respuesta son instancias independientes de las anteriores
   - Está basada en recursos, está estructurada en torno a recursos (entidades) representados como URLs, en lugar de acciones
-- Método GET
+- PostMan te hace toda la documentación [EJEMPLO](https://documenter.getpostman.com/view/6048123/2s9XxsTv8Y)
+- **Método GET**
+  - Se utiliza `res.json(respuesta)`, lo que manda la respuesta en formato JSON
+
+```js
+//1. GET a random joke
+app.get("/random", (req,res) => {
+  // Get a random joke from the array jokes
+  const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+
+  // Send it as a JSON
+  res.json(randomJoke);
+});
+```
+
+- Para acceder a los Path Parameters (que son los que van dentro de la URL después de `:` y suelen identificar a un recurso específico) se usa `req.params.[elemento]`
+- Es necesario importar el body parser
+- Por default viene en String, si hace falta pasarlo a Int o Float se usa `parseInt(variable) // parseFloat(variable)`
+
+```js
+app.get("/jokes/:id", (req, res) => {
+  // Se obtiene el id de la URL con body parser
+  const id = parseInt(req.params.id)
+  // Se busca el elemento de la lista
+  const selectedJoke = jokes.find( (joke) => joke.id === id);
+  // Se devuelve
+  res.json(selectedJoke);
+});
+```
+
+- Para acceder a los Query Parameters (que son los que van dentro de la URL después del `?` y se suelen usar para filtrar) se usa `req.query.[elemento]`
+
+```js
+app.get("/filter", (req, res) => {
+  const type = req.query.type;
+  const filteredJokes = jokes.filter( (joke) => joke.jokeType === type);
+  res.json(filteredJokes)
+});
+```
+
+- **Método POST**
+  - Se utiliza el `req.query.[elemento]` para crear un nuevo objeto, se lo mete al último del array y se lo devuelve como response del request
+
+```js
+app.post("/jokes", (req, res) => {
+  const newJoke = { 
+    id: jokes.at(-1).id + 1,
+    jokeText: req.query.text,
+    jokeType: req.query.type
+  }
+
+  jokes.push(newJoke);
+  res.json(newJoke);
+});
+```
+
+- **Método PUT**
+  - Se debe reemplazar por completo el elemento con el id proporcionado por uno nuevo
+
+```js
+app.put("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const replacementJoke = {
+    id: id, 
+    jokeText: req.body.text,
+    jokeType: req.body.type
+  };
+
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  jokes[searchIndex] = replacementJoke;
+  res.json(replacementJoke);
+});
+```
+
+- **Método PATCH**
+  - Simplemente cambia los valores que le pasaste, sino los deja como estaban
+
+```js
+app.patch("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const existingJoke = jokes.find((joke) => joke.id === id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text || existingJoke.jokeText,
+    jokeType: req.body.type || existingJoke.jokeType
+  };
+  const searchIndex = joke.findIndex((joke) => joke.id === id);
+  jokes[searchIndex] = replacementJoke;
+});
+```
+
+- **Método DELETE**
+
+```js
+app.delete("/jokes/:id", (req, res) => {
+  const jokeIndex = parseInt(req.params.id) - 1;
+  if (jokeIndex > -1) {
+    jokes.splice(jokeIndex, jokeIndex);
+    res.sendStatus(200);
+  } else {
+    res
+    .status(404)
+    .json({error: `Joke with id ${jokeIndex + 1} not found`});
+  }
+});
+```
+
+[🔝 Volver al índice](#índice)
 
 ## Sección 31: Base de Datos
 
