@@ -30,7 +30,7 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 - [x] [Sección 27: Git, GitHub y Control de Versiones](#sección-27-git-github-y-control-de-versiones)
 - [x] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
 - [x] [Sección 29: Proyecto de APIs](#sección-29-proyecto-de-apis)
-- [ ] [Sección 30: Construir tu propia API](#sección-30-construir-tu-propia-api)
+- [x] [Sección 30: Construir tu propia API](#sección-30-construir-tu-propia-api)
 - [ ] [Sección 31: Base de Datos](#sección-31-base-de-datos)
 - [ ] [Sección 32: SQL](#sección-32-sql)
 - [ ] [Sección 33: PostgreSQL](#sección-33-postgresql)
@@ -920,11 +920,26 @@ app.post("/", async(req, res) => {
 });
 ```
 
-## Sección 29: Proyecto de APIs
+## Sección 29: Proyecto de usar una API Pública
 
-- Hecho, está en la carpeta `sección29-Use-Public-API`
+:white_check_mark: Terminado!
 
-## Sección 30: Construir tu propia API
+Está en la carpeta `sección29-Use-Public-API`
+
+## Sección 30: Construir tu propia API (REST)
+
+- La gente puede hacer APIs y monetizarlas, las APIs monetizadas suelen ofrecer (y por eso monetizan)
+  - Una gran DB, con mucha información disponible
+  - Un algoritmo o servicio útil
+  - Una interfaz simplificada
+- Otra forma de usar APIs es de forma "interna"/privada (dentro de una misma empresa)
+- Para que una API se "RESTful" es esencial que  (**Principios del API REST**):
+  - Utilice el protocolo de comunicación HTTP (métodos GET, POST, etc)
+  - Devuelva los archivos en formato JSON
+  - Funcionan con una arquitectura Cliente-Servidor
+  - No tiene estados (es **stateless**), esto implica que cada request y cada respuesta son instancias independientes de las anteriores
+  - Está basada en recursos, está estructurada en torno a recursos (entidades) representados como URLs, en lugar de acciones
+- Método GET
 
 ## Sección 31: Base de Datos
 
