@@ -31,7 +31,7 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 - [x] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
 - [x] [Sección 29: Proyecto de usar una API Pública](#sección-29-proyecto-de-usar-una-api-pública)
 - [x] [Sección 30: Construir tu propia API (REST)](#sección-30-construir-tu-propia-api-rest)
-- [ ] [Sección 31: Base de Datos](#sección-31-base-de-datos)
+- [ ] [Sección 31: Bases de Datos](#sección-31-bases-de-datos)
 - [ ] [Sección 32: SQL](#sección-32-sql)
 - [ ] [Sección 33: PostgreSQL](#sección-33-postgresql)
 - [ ] [Sección 34: Proyecto Nota de Libros](#sección-34-proyecto-nota-de-libros)
@@ -74,16 +74,16 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
     - `viewport` (define cómo se ve la página)
   - `body`
 
-Atajo para crear todo en VSCode:  !
+Atajo para crear todo en VSCode: !
 
 - **Proyecto Portafolio v1**
-:white_check_mark: Terminado!
+  :white_check_mark: Terminado!
 
 - [Link al repositorio](github.com/Matusan30/curriculum-vitae-curso-v1)
 
 ## Sección 5: Introducción a CSS
 
-- Tienen la sintaxis: `atributo:valor;`  
+- Tienen la sintaxis: `atributo:valor;`
   Ejemplo: `<h1 style="color:blue;" >Titulo</h1>`
 
 - **Cómo añadir CSS a un HTML**
@@ -186,7 +186,7 @@ Atajo para crear todo en VSCode:  !
       - `p.item#importante { .. }`: Esto seleccionará un parrafo de la clase "item" que tenga el id "importante"
     - Combinar Combinadores
       - Se pueden hacer combinaciones entre los combinadores de arriba
-  
+
   - **Posición**
     - Estática
       - Es la default de HTML
@@ -283,7 +283,7 @@ Atajo para crear todo en VSCode:  !
 - Se comporta como una grilla, alinea todo en filas y columnas
 - Se hace un div que contenga todos los otros divs
 - Se puede imaginar como un ajedrez o una matriz, con las casillas, y con los índices
-Los elementos de un Grid son:
+  Los elementos de un Grid son:
 - **Contenedor**
   - Al div padre se le pone la regla `display: grid;`
   - Se asignan la cantidad de filas y columnas y su respectivo tamaño mediante
@@ -317,10 +317,10 @@ Los elementos de un Grid son:
 
 - Es un Framework Open-Source de CSS
   - Otros son: Foundation, TailWind, MUI
-  - ***PROS***
+  - **_PROS_**
     - Son útiles porque ya tienen las cosas hechas, esto nos permite ser más eficientes y desarrollar más rápido que si tuviesemos que programar todo desde cero
     - Buena compatibilidad con los distintos navegadores
-  - ***CONTRAS***
+  - **_CONTRAS_**
     - Como el CSS con Bootstrap se aplica mediante las clases en los elementos del HTML, es muy difícil poder separar el HTML y el CSS
     - No es tan customizable como si lo programaras desde cero (pensar en Windows vs Linux)
   - Usar sí: Querés armar una página rápido y que tenga una buena estética
@@ -342,16 +342,16 @@ Los elementos de un Grid son:
   - Cada `row` tiene espacios para 12 columnas, entonces si ponemos un número a cada columna (ej: `col-[1-12]`), esta ocupará la cantidad de espacios de ese número
   - También se le pueden asignar tamaños para que sea Responsive
 
-  | Breakpoint | Class infix | Dimensions | Uso |
-  | :--- | :--- | :--- | :--- |
-  | Extra small | *None* | <576px | Nada |
-  | Small | `sm` | ≥576px | Mobile |
-  | Medium | `md` | ≥768px | Tablet |
-  | Large | `lg` | ≥992px | Laptop |
-  | Extra large | `xl` | ≥1200px | Desktop |
-  | Extra extra large | `xxl` | ≥1400px | TV |
+  | Breakpoint        | Class infix | Dimensions | Uso     |
+  | :---------------- | :---------- | :--------- | :------ |
+  | Extra small       | _None_      | <576px     | Nada    |
+  | Small             | `sm`        | ≥576px     | Mobile  |
+  | Medium            | `md`        | ≥768px     | Tablet  |
+  | Large             | `lg`        | ≥992px     | Laptop  |
+  | Extra large       | `xl`        | ≥1200px    | Desktop |
+  | Extra extra large | `xxl`       | ≥1400px    | TV      |
 
-  - Entonces, para que un elemento ocupe la mitad de la pantalla en pc, se debe poner en su clase `col-xl-6`, pq 6 es la mitad de 12, y así
+- Entonces, para que un elemento ocupe la mitad de la pantalla en pc, se debe poner en su clase `col-xl-6`, pq 6 es la mitad de 12, y así
   - [Página para Practicar el Sistema de 12 Columnas](https://appbrewery.github.io/bootstrap-layout/)
 
 - **Componentes**
@@ -474,31 +474,31 @@ Los elementos de un Grid son:
     - Devuelve el primer elemento de un array que cumpla con la condifición
 
 ```js
-const objetoEncontrado = [array].find( (objeto) => condición);
+const objetoEncontrado = [array].find((objeto) => condición);
 ```
 
 - Función `filter`
   - Devuelve un array con todos los elementos que cumplan con la condición
 
 ```js
-const listaFiltrada = [array].filter( (objeto) => condición);
+const listaFiltrada = [array].filter((objeto) => condición);
 ```
 
 - **Ciclos**
-  - ***while***
+  - **_while_**
     - Sintaxis: `while (condición) { ... }`
     - No seas culiado y te olvides la condición de corte nomás
-  - ***for***
+  - **_for_**
     - Sintaxis: `for (inicio; corte; incremento) { ... }`
       - Ej: `for (i=0; i<2; i++) { ... }`
-  - ***for-each***
+  - **_for-each_**
   - Se usa para recorrer el array elemento por elemento, sin usar el for a peluche
 
 ```js
-[array].forEach(element => {
-    // Lo que le hago al elemento
-    console.log(element);
-  });
+[array].forEach((element) => {
+  // Lo que le hago al elemento
+  console.log(element);
+});
 ```
 
 [🔝 Volver al índice](#índice)
@@ -648,7 +648,7 @@ Está en la carpeta `sección17-Dice-Roll`
 - **Añadir Animaciones**
   - `$("elemento").fadeOut();`: lo va desapareciendo de a poquito
   - `$("elemento").fadeIn();`: lo va apareciendo de a poquito
-  - `$("elemento").fadeToggle();`: lo va apareciendo y desapareciendo de a poquito  
+  - `$("elemento").fadeToggle();`: lo va apareciendo y desapareciendo de a poquito
   - `$("elemento").slideUp();`: se desliza hacia arriba y lo oculta
   - `$("elemento").slideDown();`: se desliza hacia abajo y aparece
   - `$("elemento").slideToggle();`: lo va deslizando arriba y abajo
@@ -711,13 +711,13 @@ Está en la carpeta `sección20-Simon-Game`
   3. Inicializar `npm` (npm init)
   4. Instalar el paquete de Express (`npm i express`)
   5. Escribir la aplicación en el `index.js`
-    Se debe importar Express `import express from "express";`
-    Y crear la aplicación `const app = express();`
+     Se debe importar Express `import express from "express";`
+     Y crear la aplicación `const app = express();`
   6. Arrancar el server con `node index.js` y
 
   ```js
   app.listen(port, () => {
-    console.log("Listening on port " + port);
+    console.log('Listening on port ' + port);
   });
   ```
 
@@ -733,15 +733,15 @@ Está en la carpeta `sección20-Simon-Game`
       - Sintaxis: `app.patch("[url]", (req, res) => { ... })`
     - DELETE -> Borra
       - Sintaxis: `app.delete("[url]", (req, res) => { ... })`
-  - Acá es cuando entran los ***endpoints***, que es un punto de acceso a una funcionalidad del sistema
+  - Acá es cuando entran los **_endpoints_**, que es un punto de acceso a una funcionalidad del sistema
     - Están compuestos de una URL y un método HTTP (URL + HTTP = endpoint)
     - Recibe una request, procesa los datos, y devuelve una response
   - `res.sendFile("rutaArchivo");`: Con esto podes mandar un HTML por ejemplo
   - `__dirname`: Se usa para obtener la ruta del archivo, se debe pegar este código
 
     ```js
-    import { dirname } from "path";
-    import { fileURLToPath } from "url";
+    import { dirname } from 'path';
+    import { fileURLToPath } from 'url';
     const __dirname = dirname(fileURLToPath(import.meta.url));
     ```
 
@@ -756,13 +756,13 @@ Está en la carpeta `sección20-Simon-Game`
   - El middleware es una función que se ejecuta automáticamente en todas las requests, antes y/o después del endpoint
   - Request → middleware → endpoint → middleware → Response
   - Es una capa intermedia del sistema que intercepta todas las requests para aplicar lógica global (verificar un login, lo hace el middleware así no se tiene que hacer cada vez que se accede a un endpoint)
-  - ***Tipos***
+  - **_Tipos_**
     - Logging
       - morgan
         - Se debe instalar con npm, importar y usar con `app.use(morgan(tipo));`
         - [Documentación](https://expressjs.com/en/resources/middleware/morgan.html)
     - Pre-Processing
-      - ***body-parser*** -> es un middleware que convierte el body de la request en un objeto usable (ej: JSON → objeto JS)
+      - **_body-parser_** -> es un middleware que convierte el body de la request en un objeto usable (ej: JSON → objeto JS)
         - `app.use(express.json())`: si se quiere leer desde un JSON
         - Pasa de `{ "user": "mati", "pass": "123" }` (que se tiene que procesar) a `req.body.user // "mati"` (sin tener que hacer nada)
         - `app.use(express.urlencoded( {extended: true } ));`: esto se pone para poder leer los datos que vienen de un form de HTML
@@ -770,12 +770,12 @@ Está en la carpeta `sección20-Simon-Game`
     - Auth
   - También se puede crear un middleware propio
 
-      ```js
-      app.use((req, res, next) => {
-        console.log("Request method: ", req.method);
-        next();
-      });
-      ```
+    ```js
+    app.use((req, res, next) => {
+      console.log('Request method: ', req.method);
+      next();
+    });
+    ```
 
 [🔝 Volver al índice](#índice)
 
@@ -817,20 +817,20 @@ Está en la carpeta `sección20-Simon-Game`
   - Se hace de forma muy parecida a como se haría normalmente (con un POST)
 
 ```js
-app.post("/submit", (req, res) => {
-  const name = req.body["name"];
-  res.render("index.ejs");
+app.post('/submit', (req, res) => {
+  const name = req.body['name'];
+  res.render('index.ejs');
 });
 ```
 
 - **Partials vs Layout**
   - Tenemos que poder diferenciar los archivos dinámicos de los estáticos
-  - ***Estáticos***
+  - **_Estáticos_**
     - son los que NO dependen del back
     - CSS, imágenes, etc.
     - Se deben poner todos en una misma carpeta `public`
     - Se sirven con `app.use(express.static("public"));`
-  - ***Dinámicos***
+  - **_Dinámicos_**
     - Son las cosas que dependen del back
     - Hay código que se puede reutilizar (footers, nav-bar,headers, etc.)
     - Para hacer esto se utilizan los Partials con el tag `<%- include (pag) %>`, entonces, incluyendo esto, nos ahorramos de poner el footer y nav-bar en cada página
@@ -854,7 +854,7 @@ app.post("/submit", (req, res) => {
     - Usa el protocolo HTTP
     - Sin Estado (cada request es independiente)
     - Cliente-Servidor -> Separados
-    - URLs  claras para recursos
+    - URLs claras para recursos
   - GraphQL
     - En vez de muchos endpoints, tiene uno solo
     - Bueno para Front
@@ -881,14 +881,14 @@ Código para hacer una API request usando Axios:
 Es importante el async y el await, esto es porque estamos trabajando con funciones asíncronas
 
 ```js
-app.get("/", async (req, res) => {
+app.get('/', async (req, res) => {
   try {
-    const response = await axios.get("https://bored-api.appbrewery.com/random");
+    const response = await axios.get('https://bored-api.appbrewery.com/random');
     const result = response.data;
-    res.render("index.ejs", { data: result });
+    res.render('index.ejs', { data: result });
   } catch (error) {
-    console.error("Failed to make request:", error.message);
-    res.render("index.ejs", {
+    console.error('Failed to make request:', error.message);
+    res.render('index.ejs', {
       error: error.message,
     });
   }
@@ -896,19 +896,18 @@ app.get("/", async (req, res) => {
 ```
 
 - **Autenticación**
-  - Niveles
-    0. Sin Autenticación
-      Para seguridad se puede poner un límite de consultas por tiempo
+  - Niveles 0. Sin Autenticación
+    Para seguridad se puede poner un límite de consultas por tiempo
     1. Autenticación Básica
-      Se pasa junto con la consulta un usuario y contraseña
-      Para esto se suele usar Encriptación en Base64
-      Se escribe así `usuario:contraseña`, esto se pasa a Base64, y luego se pone en el Header de Autorización de la consulta
-      Es para identificar personas
+       Se pasa junto con la consulta un usuario y contraseña
+       Para esto se suele usar Encriptación en Base64
+       Se escribe así `usuario:contraseña`, esto se pasa a Base64, y luego se pone en el Header de Autorización de la consulta
+       Es para identificar personas
     2. Autorización de API Key
-      Tenes un código único que genera el cliente
-      No identifica a un usuario, se suele usar para aplicaciones
+       Tenes un código único que genera el cliente
+       No identifica a un usuario, se suele usar para aplicaciones
     3. Autentiación basada en Tokens
-      Se ingresa la primera vez con usuario y contraseña, y el cliente genera un token para que cada vez que quieras ingresar no haga falta poner usuario y contraseña (mala práctica, más chance de que te intercepten los datos y aparte pesa más la request)
+       Se ingresa la primera vez con usuario y contraseña, y el cliente genera un token para que cada vez que quieras ingresar no haga falta poner usuario y contraseña (mala práctica, más chance de que te intercepten los datos y aparte pesa más la request)
 
 - **REST APIs**
   - Se maneja con el protocolo HTTP (GET, POST, PUT. PATCH, DELETE)
@@ -918,10 +917,11 @@ app.get("/", async (req, res) => {
     - Se puede hacer `funcion1().then()` en la cual se ejecuta la `función1` e al finalizar se ejecuta el then
 
 ```js
-axios.get('/user', {
+axios
+  .get('/user', {
     params: {
-      ID: 12345
-    }
+      ID: 12345,
+    },
   })
   .then(function (response) {
     console.log(response);
@@ -931,7 +931,7 @@ axios.get('/user', {
   });
 ```
 
-- Sino, la forma más *moderna*, es declarar una función como asíncrona (con el `async` antes), y dentro de ella a alguna instrucción poner el `await`, esto hará que se ejecute la función con el `await`, y luego, ejecuta el resto del código
+- Sino, la forma más _moderna_, es declarar una función como asíncrona (con el `async` antes), y dentro de ella a alguna instrucción poner el `await`, esto hará que se ejecute la función con el `await`, y luego, ejecuta el resto del código
 
 ```js
 async function getUser() {
@@ -948,10 +948,10 @@ async function getUser() {
   - Se le agrega al `GET` un nuevo atributo `body`
 
 ```js
-import axios from "axios";
-app.post("/", async(req, res) => {
+import axios from 'axios';
+app.post('/', async (req, res) => {
   try {
-    await axios.post("URL", body, config);
+    await axios.post('URL', body, config);
     res.sendStatus(201);
   } catch (error) {
     res.status(404).send(error.response.data);
@@ -962,10 +962,10 @@ app.post("/", async(req, res) => {
 - **Manejando un PUT/PATCH con Axios (para actualizar)**
 
 ```js
-import axios from "axios";
-app.post("/", async(req, res) => {
+import axios from 'axios';
+app.post('/', async (req, res) => {
   try {
-    await axios.post("URL/[id]", body, config);
+    await axios.post('URL/[id]', body, config);
     res.sendStatus(201);
   } catch (error) {
     res.status(404).send(error.response.data);
@@ -976,10 +976,10 @@ app.post("/", async(req, res) => {
 - **Manejando un DELETE con Axios**
 
 ```js
-import axios from "axios";
-app.post("/", async(req, res) => {
+import axios from 'axios';
+app.post('/', async (req, res) => {
   try {
-    await axios.delete("URL/[id]", config);
+    await axios.delete('URL/[id]', config);
     res.sendStatus(201);
   } catch (error) {
     res.status(404).send(error.response.data);
@@ -1002,7 +1002,7 @@ Está en la carpeta `sección29-Use-Public-API`
   - Un algoritmo o servicio útil
   - Una interfaz simplificada
 - Otra forma de usar APIs es de forma "interna"/privada (dentro de una misma empresa)
-- Para que una API se "RESTful" es esencial que  (**Principios del API REST**):
+- Para que una API se "RESTful" es esencial que (**Principios del API REST**):
   - Utilice el protocolo de comunicación HTTP (métodos GET, POST, etc)
   - Devuelva los archivos en formato JSON
   - Funcionan con una arquitectura Cliente-Servidor
@@ -1014,7 +1014,7 @@ Está en la carpeta `sección29-Use-Public-API`
 
 ```js
 //1. GET a random joke
-app.get("/random", (req,res) => {
+app.get('/random', (req, res) => {
   // Get a random joke from the array jokes
   const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
 
@@ -1028,11 +1028,11 @@ app.get("/random", (req,res) => {
 - Por default viene en String, si hace falta pasarlo a Int o Float se usa `parseInt(variable) // parseFloat(variable)`
 
 ```js
-app.get("/jokes/:id", (req, res) => {
+app.get('/jokes/:id', (req, res) => {
   // Se obtiene el id de la URL con body parser
-  const id = parseInt(req.params.id)
+  const id = parseInt(req.params.id);
   // Se busca el elemento de la lista
-  const selectedJoke = jokes.find( (joke) => joke.id === id);
+  const selectedJoke = jokes.find((joke) => joke.id === id);
   // Se devuelve
   res.json(selectedJoke);
 });
@@ -1041,10 +1041,10 @@ app.get("/jokes/:id", (req, res) => {
 - Para acceder a los Query Parameters (que son los que van dentro de la URL después del `?` y se suelen usar para filtrar) se usa `req.query.[elemento]`
 
 ```js
-app.get("/filter", (req, res) => {
+app.get('/filter', (req, res) => {
   const type = req.query.type;
-  const filteredJokes = jokes.filter( (joke) => joke.jokeType === type);
-  res.json(filteredJokes)
+  const filteredJokes = jokes.filter((joke) => joke.jokeType === type);
+  res.json(filteredJokes);
 });
 ```
 
@@ -1052,12 +1052,12 @@ app.get("/filter", (req, res) => {
   - Se utiliza el `req.query.[elemento]` para crear un nuevo objeto, se lo mete al último del array y se lo devuelve como response del request
 
 ```js
-app.post("/jokes", (req, res) => {
-  const newJoke = { 
+app.post('/jokes', (req, res) => {
+  const newJoke = {
     id: jokes.at(-1).id + 1,
     jokeText: req.query.text,
-    jokeType: req.query.type
-  }
+    jokeType: req.query.type,
+  };
 
   jokes.push(newJoke);
   res.json(newJoke);
@@ -1068,12 +1068,12 @@ app.post("/jokes", (req, res) => {
   - Se debe reemplazar por completo el elemento con el id proporcionado por uno nuevo
 
 ```js
-app.put("/jokes/:id", (req, res) => {
+app.put('/jokes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const replacementJoke = {
-    id: id, 
+    id: id,
     jokeText: req.body.text,
-    jokeType: req.body.type
+    jokeType: req.body.type,
   };
 
   const searchIndex = jokes.findIndex((joke) => joke.id === id);
@@ -1086,13 +1086,13 @@ app.put("/jokes/:id", (req, res) => {
   - Simplemente cambia los valores que le pasaste, sino los deja como estaban
 
 ```js
-app.patch("/jokes/:id", (req, res) => {
+app.patch('/jokes/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const existingJoke = jokes.find((joke) => joke.id === id);
   const replacementJoke = {
     id: id,
     jokeText: req.body.text || existingJoke.jokeText,
-    jokeType: req.body.type || existingJoke.jokeType
+    jokeType: req.body.type || existingJoke.jokeType,
   };
   const searchIndex = joke.findIndex((joke) => joke.id === id);
   jokes[searchIndex] = replacementJoke;
@@ -1102,26 +1102,108 @@ app.patch("/jokes/:id", (req, res) => {
 - **Método DELETE**
 
 ```js
-app.delete("/jokes/:id", (req, res) => {
+app.delete('/jokes/:id', (req, res) => {
   const jokeIndex = parseInt(req.params.id) - 1;
   if (jokeIndex > -1) {
     jokes.splice(jokeIndex, jokeIndex);
     res.sendStatus(200);
   } else {
-    res
-    .status(404)
-    .json({error: `Joke with id ${jokeIndex + 1} not found`});
+    res.status(404).json({ error: `Joke with id ${jokeIndex + 1} not found` });
   }
 });
 ```
 
 [🔝 Volver al índice](#índice)
 
-## Sección 31: Base de Datos
+## Sección 31: Bases de Datos
+
+- Usamos Bases de Datos para guardar los datos (persistencia)
+- Existen las bases de datos SQL (Structured Query Language), que son Relacionales y las noSQL (no relacionales) (Not only SQL)
+- SQL utiliza un sistema de tablas y relaciones entre estas (por eso es relacional)
+- noSQL es bueno por la flexibilidad que ofrece (se pueden cambiar la estructura después de crearla), es mucho más piola para temas de escalabilidad
 
 ## Sección 32: SQL
 
+- A cursar BDD pibes
+
 ## Sección 33: PostgreSQL
+
+- Está bueno pq es el estándar de la industria, open-source y soporte de la comunidad
+- Para el Curso:
+
+1. Descargar el instalador de `Postgres Server` con [este link](https://sbp.enterprisedb.com/getfile.jsp?fileid=1258649)
+2. Instalarlo haciendo doble click en el `.exe`
+3. Full Siguiente
+
+- Usamos pgAdmin como UI
+
+### Hacer una query desde pgAdmin
+
+1. Abrir pgAdmin
+2. Seleccionar PostgreSQL en Server, va a pedir la contra que pusimos al instalar (yo usé `admin`)
+3. Elegimos o creamos una nueva DB
+4. Tocamos el botón de New Query
+5. Corremos la Query con F5
+
+### Importar datos desde un csv
+
+Para importar datos desde un `.csv`, hay que:
+
+1. Vamos a Servers -> PostgreSQL -> Databases -> Schemas -> Tables
+2. Click derecho en la tabla que queremos poblar
+3. Import/Export data
+4. Seleccionamos el archivo .csv y OK
+
+### Para usar Postgree con Node
+
+- Hay que usar el paquete `pg`
+
+```sh
+npm install pg
+```
+
+- Y luego
+
+```js
+import pg from 'pg';
+
+const db = new pg.Client({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'world',
+  password: 'admin',
+  port: 5432,
+});
+
+db.connect();
+// ... (las querys que tengamos que hacer)
+db.end();
+```
+
+- Yo tuve problemas con el tema del puerto... para verificar los valores que estamos usando en la db, vamos a pgAdmin y ejecutamos esto uno por uno
+
+```sql
+SELECT current_user;
+
+SHOW port;
+
+SELECT version();
+```
+
+### Ejecutar una Query en Node
+
+```js
+db.query('SELECT * FROM capitals', (err, res) => {
+  if (err) {
+    console.error('Error al ejecutar la query', err.stack);
+  } else {
+    result = res.rows;
+  }
+});
+```
+
+- Usar Mozilla para las banderas de los países
+- Los tipos de datos de Postgre [están acá](https://www.postgresql.org/docs/current/datatype.html)
 
 ## Sección 34: Proyecto Nota de Libros
 
@@ -1131,7 +1213,7 @@ app.delete("/jokes/:id", (req, res) => {
 
 ## Sección 37: Web3 Descentralizado (DApp)
 
-## Sección 38: Defi (Decentralised Finance) App
+## Sección 38: DeFi (Decentralised Finance) App
 
 ## Sección 39: IPC Live Blockchain
 
