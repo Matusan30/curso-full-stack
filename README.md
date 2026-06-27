@@ -31,11 +31,11 @@ Acá voy a ir haciendo mi toma de notas del curso de Desarrollo Full Stack de Ud
 - [x] [Sección 28: APIs (Application Programming Interface)](#sección-28-apis-application-programming-interface)
 - [x] [Sección 29: Proyecto de usar una API Pública](#sección-29-proyecto-de-usar-una-api-pública)
 - [x] [Sección 30: Construir tu propia API (REST)](#sección-30-construir-tu-propia-api-rest)
-- [ ] [Sección 31: Bases de Datos](#sección-31-bases-de-datos)
-- [ ] [Sección 32: SQL](#sección-32-sql)
-- [ ] [Sección 33: PostgreSQL](#sección-33-postgresql)
-- [ ] [Sección 34: Proyecto Nota de Libros](#sección-34-proyecto-nota-de-libros)
-- [ ] [Sección 35: Autenticación y Seguridad](#sección-35-autenticación-y-seguridad)
+- [x] [Sección 31: Bases de Datos](#sección-31-bases-de-datos)
+- [x] [Sección 32: SQL](#sección-32-sql)
+- [x] [Sección 33: PostgreSQL](#sección-33-postgresql)
+- [x] [Sección 34: Proyecto Nota de Libros](#sección-34-proyecto-nota-de-libros)
+- [x] [Sección 35: Autenticación y Seguridad](#sección-35-autenticación-y-seguridad)
 - [ ] [Sección 36: React.js](#sección-36-reactjs)
 - [ ] [Sección 37: Web3 Descentralizado (DApp)](#sección-37-web3-descentralizado-dapp)
 - [ ] [Sección 38: Defi (Decentralised Finance) App](#sección-38-defi-decentralised-finance-app)
@@ -1207,7 +1207,29 @@ db.query('SELECT * FROM capitals', (err, res) => {
 
 ## Sección 34: Proyecto Nota de Libros
 
+- Falta xd
+
 ## Sección 35: Autenticación y Seguridad
+
+- Usamos `bcrypt` para hashear las contraseñas
+- Usamos `passport` para las cookies
+- Para usar passport
+
+```js
+import session from 'express-session';
+import passport from 'passport';
+
+app.use(
+  session({
+    secret: 'TOPSECRETWORD',
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+```
 
 ## Sección 36: React.js
 
